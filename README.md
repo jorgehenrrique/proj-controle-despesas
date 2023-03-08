@@ -53,7 +53,7 @@ DOM.
 
 ## ADIÇÃO/EDIÇÃO DE CATEGORIAS
 
-<img src="assets/requisitos/ADICAO-EDIÇÃO-DE-CATEGORIAS.png">
+<img src="assets/requisitos/EDICAO-DE-CATEGORIAS.png">
 
 ### Entregas esperadas:
 * Criar um formulário para inclusão de categorias.
