@@ -4,17 +4,41 @@
     padding-top: 12rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     font-size: small;
 }
-/* --bkg-sub-color */
+
 form{
     display: flex;
     flex-direction: column;
     width: 60%;
-    padding: 3rem;
+    height: fit-content;
+    padding: 2rem 10rem;
     background-color: var(--bkg-sub-color);
     box-shadow: 0px 10px 20px 1px var(--bkg-sub-color) ;
     border-bottom: 4px solid #7f7f7f46;
 }
+.h1-form{
+    text-align: center;
+    margin-bottom: 6rem;
+    color: var(--btn-color);
+}
+
+/* || Imputs */
+.container-despesa label{
+    font-size: 1.6rem;
+}
+.container-despesa input{
+    border-bottom: 1px solid #7f7f7f46;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+}
+
+/* || Botoes */
+.btn-despesa{
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+

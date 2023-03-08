@@ -1,6 +1,8 @@
 :root{
     --border-radius-8px: .8rem;
     --bkg-sub-color: #e0e0e05e;
+    --btn-color-hover: #87b3d7;
+    --btn-color-active: #70ef79;
     /* Tema claro */
     --header-color: #4CAF50;
     --background-container: #F5F5F5;
@@ -97,15 +99,16 @@ section{
 }
 
 
-/* || butao fultrar */
+/* || Botao filtrar */
 .filtro{
     width: 80%;
     align-self: center;
 }
-#filtro{
+#filtrar{
     width: 50%;
     border-bottom: .1rem solid #7f7f7f ;
     padding: 1.4rem;
+    font-size: 1.6rem;
 }
 
 

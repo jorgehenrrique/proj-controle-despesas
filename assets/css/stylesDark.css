@@ -14,7 +14,12 @@
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
-
+    #filtrar{
+        color: var(--text-color-dark);
+    }
+    .container-despesa input{
+        color: var(--text-color-dark);
+    }
     .container-despesa{
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
