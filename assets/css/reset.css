@@ -52,7 +52,6 @@ select {
     border: none;
     outline: none;
     background: none;
-    outline: none;
 }
 
 button:focus,
@@ -70,6 +69,6 @@ a:focus {
     text-decoration: none;
 }
 
-/* html, body {
+html, body {
     height: 100%;
-} */
+}

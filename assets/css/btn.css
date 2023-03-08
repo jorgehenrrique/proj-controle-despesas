@@ -5,6 +5,7 @@ button.btn-filtrar{
     /* border-radius: var(--border-radius-8px); */
 }
 
+/* || Botao */
 button{
     width: fit-content;
     padding: .2rem 2rem;
@@ -13,3 +14,21 @@ button{
     background-color: var(--btn-color);
     font-weight: bold;
 }
+button:hover{
+    
+}
+
+/* || Status tabela */
+    .pago{
+        background-color: #70ef79;
+        border-radius: var(--border-radius-8px);
+        font-weight: bold;
+        text-align: center;
+    }
+    .pendente{
+        background-color: #ef7085;
+        border-radius: var(--border-radius-8px);
+        font-weight: bold;
+        text-align: center;
+    }
+

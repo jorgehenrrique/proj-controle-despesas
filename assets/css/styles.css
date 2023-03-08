@@ -1,5 +1,6 @@
 :root{
     --border-radius-8px: .8rem;
+    --bkg-sub-color: #e0e0e05e;
     /* Tema claro */
     --header-color: #4CAF50;
     --background-container: #F5F5F5;
@@ -29,7 +30,7 @@ img{
 }
 html, a{
     color: var(--text-color);
-    position: relative;
+    /* position: relative; */
 }
 
 
@@ -43,6 +44,7 @@ header{
     height: 6rem;
     align-items: center;
     padding-right: 2rem;
+    font-weight: bold;
     position: fixed;
     z-index: 1;
 }
@@ -50,7 +52,8 @@ header{
     background-color: var(--background-container);
     /* background-color: black; */
     width: 100%;
-    height: calc(100vh - 6rem);
+    /* height: calc(100vh - 6rem); */
+    height: 100vh;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -68,25 +71,25 @@ header{
 }
 section{
     width: 25%;
-    height: 10rem;
+    height: 11rem;
     border-radius: var(--border-radius-8px);
 }
 .status-sub-01{
-    border-bottom: 4px solid green;
+    border-bottom: 4px solid #70ef79;
     box-shadow: 30px 30px 50px 10px #70ef797b inset;
 }
 .status-sub-01 p{
     color: green;
 }
 .status-sub-02{
-    border-bottom: 4px solid red;
+    border-bottom: 4px solid #ef7085;
     box-shadow: 30px 30px 50px 10px #ef70857b inset;
 }
 .status-sub-02 p{
     color: red;
 }
 .status-sub-03{
-    border-bottom: 4px solid orange;
+    border-bottom: 4px solid #e49036;
     box-shadow: 30px 30px 50px 10px #e490367b inset;
 }
 .status-sub-03 p{
@@ -102,7 +105,7 @@ section{
 #filtro{
     width: 50%;
     border-bottom: .1rem solid #7f7f7f ;
-    padding: 1.5rem;
+    padding: 1.4rem;
 }
 
 
@@ -111,8 +114,6 @@ section{
     width: 80%;
     align-self: center;
     height: fit-content;
-    /* flex-grow: 1; */
-    /* background-color: #e5e5e5; */
 }
 table{
     width: 100%;
@@ -120,22 +121,25 @@ table{
 }
 th, td{
     padding: 8px 5px;
-    text-align: center;
+    text-align: justify;
     white-space: nowrap;
     border-bottom: .1rem solid #7f7f7f46 ;
 }
 th{
-    background-color: #e0e0e05e;
+    background-color: var(--bkg-sub-color);
     height: 6rem;
 }
 tr:nth-child(2n){
-    background-color: #e0e0e05e;
+    background-color: var(--bkg-sub-color);
 }
 .btn-adicionar{
     margin: 3rem 0;
     display: flex;
     justify-content: flex-end;
 }
-.btn-adicionar-despesa{
-    background-color: #2196F3;
+
+
+/* || Display none */
+.none{
+    display: none;
 }
