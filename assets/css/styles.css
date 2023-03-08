@@ -1,8 +1,10 @@
 :root{
+    --border-radius-8px: .8rem;
     /* Tema claro */
     --header-color: #4CAF50;
     --background-container: #F5F5F5;
     --text-color: #333333;
+    --btn-color: #2196F3;
     /* Tema escuro */
     --header-color-dark: #2B2B2B;
     --background-container-dark: #1C1C1C;
@@ -27,7 +29,11 @@ img{
 }
 html, a{
     color: var(--text-color);
+    position: relative;
 }
+
+
+/* || Tela principal */
 header{
     display: flex;
     justify-content: flex-end;
@@ -35,33 +41,101 @@ header{
     background-color: var(--header-color);
     width: 100%;
     height: 6rem;
-    text-align: center;
     align-items: center;
     padding-right: 2rem;
+    position: fixed;
+    z-index: 1;
 }
 .container{
     background-color: var(--background-container);
+    /* background-color: black; */
     width: 100%;
     height: calc(100vh - 6rem);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
+
+
+/* || Card financeiro */
 .status-financeiro{
-    padding-top: 6rem;
+    padding-top: 12rem;
     display: flex;
     justify-content: space-evenly;
-    /* font-weight: bold; */
     font-size: x-large;
+    text-align: center;
 }
 section{
-    border-bottom: 4px solid;
-    width: 20%;
+    width: 25%;
+    height: 10rem;
+    border-radius: var(--border-radius-8px);
 }
 .status-sub-01{
     border-bottom: 4px solid green;
+    box-shadow: 30px 30px 50px 10px #70ef797b inset;
+}
+.status-sub-01 p{
+    color: green;
 }
 .status-sub-02{
     border-bottom: 4px solid red;
+    box-shadow: 30px 30px 50px 10px #ef70857b inset;
+}
+.status-sub-02 p{
+    color: red;
 }
 .status-sub-03{
     border-bottom: 4px solid orange;
+    box-shadow: 30px 30px 50px 10px #e490367b inset;
+}
+.status-sub-03 p{
+    color: orange;
+}
+
+
+/* || butao fultrar */
+.filtro{
+    width: 80%;
+    align-self: center;
+}
+#filtro{
+    width: 50%;
+    border-bottom: .1rem solid #7f7f7f ;
+    padding: 1.5rem;
+}
+
+
+/* || Tabela */
+.tabela{
+    width: 80%;
+    align-self: center;
+    height: fit-content;
+    /* flex-grow: 1; */
+    /* background-color: #e5e5e5; */
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 8px 5px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: .1rem solid #7f7f7f46 ;
+}
+th{
+    background-color: #e0e0e05e;
+    height: 6rem;
+}
+tr:nth-child(2n){
+    background-color: #e0e0e05e;
+}
+.btn-adicionar{
+    margin: 3rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-adicionar-despesa{
+    background-color: #2196F3;
 }

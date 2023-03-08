@@ -1,0 +1,15 @@
+button.btn-filtrar{
+    /* background-color: var(--header-color); */
+    /* width: 10%;
+    height: 90%; */
+    /* border-radius: var(--border-radius-8px); */
+}
+
+button{
+    width: fit-content;
+    padding: .2rem 2rem;
+    height: 4rem;
+    border-radius: var(--border-radius-8px);
+    background-color: var(--btn-color);
+    font-weight: bold;
+}

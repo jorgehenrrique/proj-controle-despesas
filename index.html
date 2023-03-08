@@ -13,7 +13,8 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- <link rel="stylesheet" href="assets/css/stylesDark.css"> -->
+    <link rel="stylesheet" href="assets/css/btn.css">
+    <link rel="stylesheet" href="assets/css/stylesDark.css">
     <title>Controle de despesas</title>
 </head>
 <body>
@@ -34,9 +35,43 @@
                 <p>R$ </p>
             </section>
             <section class="status-sub-03">
-                <strong>ATRASADOS</strong>
-                <p>R$ </p>
+                <strong>ATRASADAS</strong>
+                <p>1</p>
             </section>
+        </div>
+        <div class="filtro">
+            <label for="filtro"></label>
+            <input type="text" placeholder="Filtrar" id="filtro">
+            <button class="btn-filtrar">FILTRAR</button>
+        </div>
+        <div class="tabela">
+            <table>
+                <thead>
+                <tr>
+                    <th>Data de Vencimento</th>
+                    <th>Despesa</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td>23/03/2023</td>
+                    <td>Compra de lanche</td>
+                    <td>R$ 50.00</td>
+                    <td>PAGO</td>
+                </tr>
+                <tr>
+                    <td>23/03/2023</td>
+                    <td>Compra de lanche</td>
+                    <td>R$ 50.00</td>
+                    <td>PAGO</td>
+                </tr>
+            </tbody>
+            </table>
+            <div class="btn-adicionar">
+                <button class="btn-adicionar-despesa">ADICIONAR DESPESA</button>
+            </div>
         </div>
     </div>
 
