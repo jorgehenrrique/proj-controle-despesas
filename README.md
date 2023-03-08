@@ -27,7 +27,7 @@ aplicação, tais como: Total pago, Total a pagar e quantidade de contas vencida
 
 ## ADICIONAR DESPESA
 
-<img src="assets/requisitos/ADICIONAR DESPESA.png">
+<img src="assets/requisitos/ADICIONAR-DESPESA.png">
 
 ### Entregas esperadas:
 * O campo de “Categoria” deve buscar o registro de categorias para o cliente selecionar, fique livre para fazer como achar mais adequado.
@@ -53,7 +53,7 @@ DOM.
 
 ## ADIÇÃO/EDIÇÃO DE CATEGORIAS
 
-<img src="assets/requisitos/ADIÇÃO/EDIÇÃO DE CATEGORIAS.png">
+<img src="assets/requisitos/ADICAO-EDIÇÃO-DE-CATEGORIAS.png">
 
 ### Entregas esperadas:
 * Criar um formulário para inclusão de categorias.
