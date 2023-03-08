@@ -1,0 +1,10 @@
+html, a{
+    color: var(--text-color-dark);
+}
+header {
+    background-color: var(--header-color-dark);
+}
+.container {
+    background-color: var(--background-container-dark);
+    /* color: var(--text-color-dark); */
+}

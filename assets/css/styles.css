@@ -1,0 +1,67 @@
+:root{
+    /* Tema claro */
+    --header-color: #4CAF50;
+    --background-container: #F5F5F5;
+    --text-color: #333333;
+    /* Tema escuro */
+    --header-color-dark: #2B2B2B;
+    --background-container-dark: #1C1C1C;
+    --text-color-dark: #FFFFFF;
+}
+
+img{
+/* claro */
+    color: #F5F5F5; /* fundo*/
+    color: #FFFFFF; /* cabecalho*/
+    color: #333333; /*Texto principal */
+    color: #FFC107; /*Destaque*/
+    color: #4CAF50; /*Botões*/
+    color: #2196F3; /*Links*/
+/* escuro */
+    color: #1C1C1C; /*Fundo*/
+    color: #2B2B2B; /*Cabeçalho*/
+    color: #FFFFFF; /*Texto principal*/
+    color: #FFC107; /*Destaque*/
+    color: #4CAF50; /*Botões*/
+    color: #2196F3 /*Links*/
+}
+html, a{
+    color: var(--text-color);
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    background-color: var(--header-color);
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+    align-items: center;
+    padding-right: 2rem;
+}
+.container{
+    background-color: var(--background-container);
+    width: 100%;
+    height: calc(100vh - 6rem);
+    color: var(--text-color);
+}
+.status-financeiro{
+    padding-top: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    /* font-weight: bold; */
+    font-size: x-large;
+}
+section{
+    border-bottom: 4px solid;
+    width: 20%;
+}
+.status-sub-01{
+    border-bottom: 4px solid green;
+}
+.status-sub-02{
+    border-bottom: 4px solid red;
+}
+.status-sub-03{
+    border-bottom: 4px solid orange;
+}
