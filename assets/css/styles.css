@@ -103,7 +103,10 @@ section{
 .tabela{
     width: 80%;
     align-self: center;
-    height: fit-content;
+    /* height: fit-content; */
+    /* max-height: 40.5rem; */
+    max-height: 60%;
+    overflow: auto;
 }
 table{
     width: 100%;
