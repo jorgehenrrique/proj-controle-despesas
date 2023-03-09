@@ -16,3 +16,18 @@
     margin-bottom: 4rem;
     font-size: 1.6rem;
 }
+
+.mensagem-sucesso{
+    width: 100%;
+    background-color: #70ef797b;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: var(--border-radius-8px);
+    padding: .5rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.mensagem-alerta{
+    background-color: #e490367b;
+    color: red;
+}

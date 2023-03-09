@@ -96,10 +96,7 @@ btnCancelarEdit.addEventListener('click', () => {
     limpaForm();
     chamaCategorias()
 });
-// edit salvar
-btnSalvarEdit.addEventListener('click', () => {
 
-});
 function limpaForm(){ // Limpa todos formularios
     for (let form of formularios){
         form.reset();
