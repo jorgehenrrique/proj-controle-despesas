@@ -24,6 +24,15 @@ const btnCategoriasFiltrar = document.querySelector('.btn-filtrar-categorias'); 
 const inputHomeFiltrar = document.querySelector('#filtrar'); // Home filtrar input
 const inputCategoriasFiltrar = document.querySelector('#filtrar-cat'); // Categorias filtrar input
 
+// || Input form de adc despesa
+const inputBusqueCategoria = document.querySelector('#categoria');
+const inputDataVencimento = document.querySelector('#vencimento');
+const inputDespesa = document.querySelector('#despesa');
+const inputValor = document.querySelector('#valor');
+
+// || Input form adc categoria
+const inputCriarCategoria = document.querySelector('#categoria-criar');
+
 // home
 btnHome.addEventListener('click', chamaHome);
 function chamaHome(){
@@ -110,14 +119,5 @@ function confirmaExcluir(){ // Confirmar excluir em Categorias
     });
 }
 
-// categorias editar
-// inputEditarCategoria.addEventListener('click', () => {
-// });
-// categorias excluir
-// inputExcluirCategoria.addEventListener('click', () => {
-// });
-
 // --------------------------------------------------------
 
-// || Input form de adc despesa
-// const 

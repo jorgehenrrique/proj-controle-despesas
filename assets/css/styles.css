@@ -90,7 +90,7 @@ section{
     width: 80%;
     align-self: center;
 }
-#filtrar{
+#filtrar, #filtrar-cat{
     width: 50%;
     border-bottom: .1rem solid #7f7f7f ;
     padding: 1.4rem;
