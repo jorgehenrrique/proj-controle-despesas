@@ -125,6 +125,11 @@
             <input type="text" placeholder="Filtrar" id="filtrar">
             <button class="btn-filtrar">FILTRAR</button>
         </div>
+        <div class="confir-excluir none">
+            <p>Deseja realmente excluir?</p>
+            <button class="simExcluir">sim</button>
+            <button class="naoExcluir">não</button>
+        </div>
         <div class="tabela-categorias">
             <table>
                 <thead>
@@ -139,14 +144,14 @@
                     <td>23032023</td>
                     <td>Jogos</td>
                     <td>
-                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="">EXCLUIR</button>
+                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
                     </td>
                 </tr>
                 <tr>
                     <td>23032023</td>
                     <td>Lanche</td>
                     <td>
-                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="">EXCLUIR</button>
+                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
                     </td>
                 </tr>
             </tbody>

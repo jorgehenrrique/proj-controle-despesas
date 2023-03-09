@@ -4,6 +4,9 @@ const telaDespesa = document.querySelector('.container-despesa');
 const telaCategorias = document.querySelector('.container-categorias');
 const telaEditar = document.querySelector('.container-editar');
 
+// || Mensagens
+const confirmarExcluir = document.querySelector('.confir-excluir');
+
 // || Inputs botoes
 const inputHome = document.querySelector('.despesas');
 const inputAdcDespesa = document.querySelector('.btn-adicionar-despesa');
@@ -16,6 +19,8 @@ const inputSalvarEdit = document.querySelector('.btn-edit-salvar'); // Cancelar 
 const inputCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit cate
 // const inputEditarCategoria = document.querySelector('.btn-editar'); // Edititar categoria
 // const inputExcluirCategoria = document.querySelector('.btn-excluir'); // Excluir categoria
+
+
 
 // home
 inputHome.addEventListener('click', chamaHome);
@@ -88,6 +93,19 @@ function limpaForm(){ // Limpa todos formularios
     for (let form of formularios){
         form.reset();
     }
+}
+
+function confirmaExcluir(){ // Confirmar excluir em Categorias
+    console.log('Excluir?')
+    confirmarExcluir.classList.remove('none');
+    document.querySelector('.simExcluir').addEventListener('click', () => {
+        console.log('Deletado');
+        confirmarExcluir.classList.add('none');
+    });
+    document.querySelector('.naoExcluir').addEventListener('click', () => {
+        console.log('Não deletado');
+        confirmarExcluir.classList.add('none');
+    });
 }
 
 // categorias editar
