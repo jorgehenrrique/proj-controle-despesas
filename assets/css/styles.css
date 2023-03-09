@@ -53,11 +53,14 @@ header{
     justify-content: space-evenly;
     font-size: x-large;
     text-align: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 section{
     width: 25%;
     height: 11rem;
     border-radius: var(--border-radius-8px);
+    min-width: 14.4rem;
 }
 .status-sub-01{
     border-bottom: 4px solid #70ef79;
@@ -92,6 +95,7 @@ section{
     border-bottom: .1rem solid #7f7f7f ;
     padding: 1.4rem;
     font-size: 1.6rem;
+    min-width: 14.4rem;
 }
 
 
