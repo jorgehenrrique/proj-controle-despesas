@@ -7,23 +7,25 @@ const telaEditar = document.querySelector('.container-editar');
 // || Mensagens
 const confirmarExcluir = document.querySelector('.confir-excluir');
 
-// || Inputs botoes
-const inputHome = document.querySelector('.despesas');
-const inputAdcDespesa = document.querySelector('.btn-adicionar-despesa');
-const inputCategorias = document.querySelector('.categorias');
-const inputAdcEditar = document.querySelector('.btn-adicionar-categoria');
-const inputSalvarDespesa = document.querySelector('.btn-despesa-salvar'); // Salvar despesa
-const inputCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); // Cancelar despesa
+// || Botoes
+const btnHome = document.querySelector('.despesas');
+const btnAdcDespesa = document.querySelector('.btn-adicionar-despesa');
+const btnCategorias = document.querySelector('.categorias');
+const btnAdcEditar = document.querySelector('.btn-adicionar-categoria');
+const btnSalvarDespesa = document.querySelector('.btn-despesa-salvar'); // Salvar despesa
+const btnCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); // Cancelar despesa
 const formularios = document.querySelectorAll('form');
-const inputSalvarEdit = document.querySelector('.btn-edit-salvar'); // Cancelar edit cate
-const inputCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit cate
-// const inputEditarCategoria = document.querySelector('.btn-editar'); // Edititar categoria
-// const inputExcluirCategoria = document.querySelector('.btn-excluir'); // Excluir categoria
+const btnSalvarEdit = document.querySelector('.btn-edit-salvar'); // Salvar edit cate
+const btnCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit cate
+const btnHomeFiltrar = document.querySelector('.btn-filtrar'); // Home filtrar btn
+const btnCategoriasFiltrar = document.querySelector('.btn-filtrar-categorias'); // Categorias filtrar btn
 
-
+// || Inputs
+const inputHomeFiltrar = document.querySelector('#filtrar'); // Home filtrar input
+const inputCategoriasFiltrar = document.querySelector('#filtrar-cat'); // Categorias filtrar input
 
 // home
-inputHome.addEventListener('click', chamaHome);
+btnHome.addEventListener('click', chamaHome);
 function chamaHome(){
     limpaDespesa()
     limpaCategorias()
@@ -35,7 +37,7 @@ function limpaHome(){
 }
 
 // despesa
-inputAdcDespesa.addEventListener('click', chamaDespesa);
+btnAdcDespesa.addEventListener('click', chamaDespesa);
 function chamaDespesa(){
     limpaHome()
     limpaCategorias()
@@ -47,7 +49,7 @@ function limpaDespesa(){
 }
 
 // categorias
-inputCategorias.addEventListener('click', chamaCategorias);
+btnCategorias.addEventListener('click', chamaCategorias);
 function chamaCategorias(){
     limpaHome()
     limpaDespesa()
@@ -59,7 +61,7 @@ function limpaCategorias(){
 }
 
 // editar
-inputAdcEditar.addEventListener('click', chamaEditar);
+btnAdcEditar.addEventListener('click', chamaEditar);
 function chamaEditar(){
     limpaHome()
     limpaDespesa()
@@ -71,22 +73,22 @@ function limpaEditar(){
 }
 
 // despesa cancelar
-inputCancelarDespesa.addEventListener('click', () => {
+btnCancelarDespesa.addEventListener('click', () => {
     limpaForm();
     chamaHome()
 });
 // despesa salvar
-inputSalvarDespesa.addEventListener('click', () => {
+btnSalvarDespesa.addEventListener('click', () => {
 
 });
 
 // edit cancelar
-inputCancelarEdit.addEventListener('click', () => {
+btnCancelarEdit.addEventListener('click', () => {
     limpaForm();
     chamaCategorias()
 });
 // edit salvar
-inputCancelarEdit.addEventListener('click', () => {
+btnSalvarEdit.addEventListener('click', () => {
 
 });
 function limpaForm(){ // Limpa todos formularios
@@ -116,3 +118,6 @@ function confirmaExcluir(){ // Confirmar excluir em Categorias
 // });
 
 // --------------------------------------------------------
+
+// || Input form de adc despesa
+// const 
