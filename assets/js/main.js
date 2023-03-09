@@ -14,6 +14,8 @@ const inputCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); //
 const formularios = document.querySelectorAll('form');
 const inputSalvarEdit = document.querySelector('.btn-edit-salvar'); // Cancelar edit cate
 const inputCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit cate
+// const inputEditarCategoria = document.querySelector('.btn-editar'); // Edititar categoria
+// const inputExcluirCategoria = document.querySelector('.btn-excluir'); // Excluir categoria
 
 // home
 inputHome.addEventListener('click', chamaHome);
@@ -68,24 +70,31 @@ inputCancelarDespesa.addEventListener('click', () => {
     limpaForm();
     chamaHome()
 });
+// despesa salvar
+inputSalvarDespesa.addEventListener('click', () => {
+
+});
+
 // edit cancelar
 inputCancelarEdit.addEventListener('click', () => {
     limpaForm();
     chamaCategorias()
 });
+// edit salvar
+inputCancelarEdit.addEventListener('click', () => {
 
+});
 function limpaForm(){ // Limpa todos formularios
     for (let form of formularios){
         form.reset();
     }
 }
 
-// despesa salvar
-inputSalvarDespesa.addEventListener('click', () => {
+// categorias editar
+// inputEditarCategoria.addEventListener('click', () => {
+// });
+// categorias excluir
+// inputExcluirCategoria.addEventListener('click', () => {
+// });
 
-});
-
-// edit salvar
-inputCancelarEdit.addEventListener('click', () => {
-
-});
+// --------------------------------------------------------
