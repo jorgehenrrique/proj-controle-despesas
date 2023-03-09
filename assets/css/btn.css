@@ -18,6 +18,7 @@ button:active{
     border-bottom: 4px solid #2196F3;
 }
 
+
 /* || Status tabela */
     .pago{
         background-color: #70ef79;
@@ -32,6 +33,7 @@ button:active{
         text-align: center;
     }
 
+
 /* || Botao cancelar */
 .btn-cancelar{
     background-color: var(--text-color-dark);
@@ -44,7 +46,9 @@ button:active{
 .btn-cancelar:hover{
     box-shadow: 5px 10px 40px 5px #ee3a58;
 }
-/* h1 padrao */
+
+
+/* || h1 padrao */
 h1{
     text-align: center;
     margin-bottom: 6rem;

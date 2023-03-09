@@ -14,22 +14,6 @@
     --text-color-dark: #FFFFFF;
 }
 
-img{
-/* claro */
-    color: #F5F5F5; /* fundo*/
-    color: #FFFFFF; /* cabecalho*/
-    color: #333333; /*Texto principal */
-    color: #FFC107; /*Destaque*/
-    color: #4CAF50; /*Botões*/
-    color: #2196F3; /*Links*/
-/* escuro */
-    color: #1C1C1C; /*Fundo*/
-    color: #2B2B2B; /*Cabeçalho*/
-    color: #FFFFFF; /*Texto principal*/
-    color: #FFC107; /*Destaque*/
-    color: #4CAF50; /*Botões*/
-    color: #2196F3 /*Links*/
-}
 html, a{
     color: var(--text-color);
     /* position: relative; */
@@ -52,7 +36,6 @@ header{
 }
 .container{
     background-color: var(--background-container);
-    /* background-color: black; */
     width: 100%;
     /* height: calc(100vh - 6rem); */
     height: 100vh;
