@@ -7,3 +7,12 @@
     align-items: center;
 }
 
+/* || Input */
+.container-editar label{
+    font-size: 1.6rem;
+}
+.container-editar input{
+    border-bottom: 1px solid #7f7f7f46;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+}
