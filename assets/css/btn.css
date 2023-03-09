@@ -8,6 +8,7 @@ button{
     background-color: var(--btn-color);
     font-weight: bold;
     transition: all .1s ease-out;
+    color: var(--text-color);
 }
 button:hover{
     background-color: var(--btn-color-hover);
@@ -20,18 +21,18 @@ button:active{
 
 
 /* || Status tabela */
-    .pago{
-        background-color: #70ef79;
-        border-radius: var(--border-radius-8px);
-        font-weight: bold;
-        text-align: center;
-    }
-    .pendente{
-        background-color: #ef7085;
-        border-radius: var(--border-radius-8px);
-        font-weight: bold;
-        text-align: center;
-    }
+.pago{
+    background-color: #70ef79;
+    border-radius: var(--border-radius-8px);
+    font-weight: bold;
+    text-align: center;
+}
+.pendente{
+    background-color: #ef7085;
+    border-radius: var(--border-radius-8px);
+    font-weight: bold;
+    text-align: center;
+}
 
 
 /* || Botao cancelar */
