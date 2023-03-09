@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/btn.css">
+    <link rel="stylesheet" href="assets/css/tela-editar.css">
+    <link rel="stylesheet" href="assets/css/tela-categorias.css">
     <link rel="stylesheet" href="assets/css/tela-despesas.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- <link rel="stylesheet" href="assets/css/stylesDark.css"> -->
@@ -62,7 +64,7 @@
                     <td>23/03/2023</td>
                     <td>Compra de lanche</td>
                     <td>R$ 50.00</td>
-                    <td class="pendente">PAGO</td>
+                    <td class="pendente">PENDENTE</td>
                 </tr>
                 <tr>
                     <td>23/03/2023</td>
@@ -78,9 +80,9 @@
         </div>
     </div>
 
-    <div class="container-despesa animate__fadeIn non">
+    <div class="container-despesa animate__fadeIn none">
         <form action="#">
-            <h1 class="h1-form">ADICIONAR DESPESA</h1>
+            <h1>ADICIONAR DESPESA</h1>
             <label for="categoria">Categoria</label>
             <input type="text" placeholder="Busque a categoria" id="categoria">
 
@@ -95,10 +97,63 @@
 
             <div class="btn-despesa">
                 <button class="btn-despesa-salvar">SALVAR</button>
-                <button class="btn-despesa-cancelar">CANCELAR</button>
+                <button class="btn-despesa-cancelar btn-cancelar">CANCELAR</button>
             </div>
         </form>
     </div>
+
+    <div class="container-categorias animate__fadeIn none">
+        <h1>CADASTRO DE CATEGORIAS</h1>
+        <div class="filtro">
+            <label for="filtrar"></label>
+            <input type="text" placeholder="Filtrar" id="filtrar">
+            <button class="btn-filtrar">FILTRAR</button>
+        </div>
+        <div class="tabela-categorias">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>| Categoria</th>
+                    <th>| Ações</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td>23032023</td>
+                    <td>Jogos</td>
+                    <td>
+                        <button class="btn-editar">EDITAR</button> <button class="btn-cancelar">EXCLUIR</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>23032023</td>
+                    <td>Lanche</td>
+                    <td>
+                        <button class="btn-editar">EDITAR</button> <button class="btn-cancelar">EXCLUIR</button>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <div class="btn-adicionar">
+                <button class="btn-adicionar-categoria">ADICIONAR CATEGORIA</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-editar animate__fadeIn non">
+        <form action="#">
+            <h1>ADICIONAR/EDITAR CATEGORIAS</h1>
+            <label for="categoria">Categoria</label>
+            <input type="text" placeholder="Busque a categoria" id="categoria">
+
+            <div class="btn-despesa">
+                <button class="btn-edit-salvar">SALVAR</button>
+                <button class="btn-edit-cancelar btn-cancelar">CANCELAR</button>
+            </div>
+        </form>
+    </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

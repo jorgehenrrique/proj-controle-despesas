@@ -24,6 +24,10 @@
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
+    .container-categorias{
+        background-color: var(--background-container-dark);
+        color: var(--text-color-dark);
+    }
     
     .status-sub-01 {
         box-shadow: 10px 20px 50px 5px #70ef797b;

@@ -1,9 +1,3 @@
-button.btn-filtrar{
-    /* background-color: var(--header-color); */
-    /* width: 10%;
-    height: 90%; */
-    /* border-radius: var(--border-radius-8px); */
-}
 
 /* || Botao */
 button{
@@ -17,7 +11,7 @@ button{
 }
 button:hover{
     background-color: var(--btn-color-hover);
-    box-shadow: 10px 20px 50px 5px #2196F3;
+    box-shadow: 5px 10px 40px 5px #2196F3;
 }
 button:active{
     background-color: var(--btn-color-active);
@@ -38,3 +32,22 @@ button:active{
         text-align: center;
     }
 
+/* || Botao cancelar */
+.btn-cancelar{
+    background-color: var(--text-color-dark);
+    color: #ef7085;
+    border: .1rem solid #ee3a58;
+}
+.btn-cancelar:active{
+    border-bottom: 4px solid #ee3a58;
+}
+.btn-cancelar:hover{
+    box-shadow: 5px 10px 40px 5px #ee3a58;
+}
+/* h1 padrao */
+h1{
+    text-align: center;
+    margin-bottom: 6rem;
+    color: var(--btn-color);
+    font-size: x-large;
+}
