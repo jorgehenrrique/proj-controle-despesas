@@ -9,6 +9,11 @@ const inputHome = document.querySelector('.despesas');
 const inputAdcDespesa = document.querySelector('.btn-adicionar-despesa');
 const inputCategorias = document.querySelector('.categorias');
 const inputAdcEditar = document.querySelector('.btn-adicionar-categoria');
+const inputSalvarDespesa = document.querySelector('.btn-despesa-salvar'); // Salvar despesa
+const inputCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); // Cancelar despesa
+const formularios = document.querySelectorAll('form');
+const inputSalvarEdit = document.querySelector('.btn-edit-salvar'); // Cancelar edit cate
+const inputCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit cate
 
 // home
 inputHome.addEventListener('click', chamaHome);
@@ -58,3 +63,29 @@ function limpaEditar(){
     telaEditar.classList.add('none');
 }
 
+// despesa cancelar
+inputCancelarDespesa.addEventListener('click', () => {
+    limpaForm();
+    chamaHome()
+});
+// edit cancelar
+inputCancelarEdit.addEventListener('click', () => {
+    limpaForm();
+    chamaCategorias()
+});
+
+function limpaForm(){ // Limpa todos formularios
+    for (let form of formularios){
+        form.reset();
+    }
+}
+
+// despesa salvar
+inputSalvarDespesa.addEventListener('click', () => {
+
+});
+
+// edit salvar
+inputCancelarEdit.addEventListener('click', () => {
+
+});
