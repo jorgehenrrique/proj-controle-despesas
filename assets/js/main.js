@@ -17,7 +17,7 @@ const btnCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); // C
 const formularios = document.querySelectorAll('form');
 const btnSalvarEdit = document.querySelector('.btn-edit-salvar'); // Salvar edit/adc cate
 const btnCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit/adc cate
-const btnHomeFiltrar = document.querySelector('.btn-filtrar'); // Home filtrar btn
+// const btnHomeFiltrar = document.querySelector('.btn-filtrar'); // Home filtrar btn
 // const btnCategoriasFiltrar = document.querySelector('.btn-filtrar-categorias'); // Categorias filtrar btn
 
 // || Inputs
