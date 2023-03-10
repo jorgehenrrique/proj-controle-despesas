@@ -2,7 +2,7 @@ let criarCategorias = [];
 
 function exibirMensagens(status, mensagem) {
     document.querySelector('.mensagem-sucesso').innerHTML = mensagem;
-    if (status){
+    if (status) {
         document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
         document.querySelector('.mensagem-sucesso').classList.remove('none');
     } else {
@@ -18,8 +18,10 @@ function limparMensagens() {
 // inputCriarCategoria
 // edit salvar
 btnSalvarEdit.addEventListener('click', () => {
-    if (inputCriarCategoria.value.trim() !== ''){
-        criarCategorias.push(inputCriarCategoria.value.toUpperCase());
+    let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
+    if (inputCategoria !== '') {
+        verificaCategoria(inputCategoria);
+        criarCategorias.push(inputCategoria);
         exibirMensagens(true, 'Categoria adicionada com sucesso!');
     } else {
         exibirMensagens(false, 'Informe um valor válido!');
@@ -27,6 +29,21 @@ btnSalvarEdit.addEventListener('click', () => {
     limpaForm();
     console.log(criarCategorias);
 });
-setInterval(function() {
+setInterval(function () {
     limparMensagens();
 }, 10000);
+
+function verificaCategoria(inputCategoria) {
+    console.log(inputCategoria)
+
+    criarCategorias.forEach((categoria) => {
+        console.log('input', inputCategoria, categoria)
+        if (inputCategoria === categoria) {
+            exibirMensagens(false, 'Categoria já existe');
+            document.querySelector('.mensagem-sucesso').classList.add('mensagem-alerta');
+            document.querySelector('.mensagem-sucesso').classList.remove('none');
+        }
+        console.log('input02', inputCategoria, categoria)
+    });
+
+}

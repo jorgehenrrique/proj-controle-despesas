@@ -95,7 +95,7 @@ section{
 }
 .btn-adicionar-despesa{
     flex-grow: 1;
-    margin-left: 6rem;
+    margin-left: 2rem;
 }
 #filtrar, #filtrar-cat{
     width: 60%;
