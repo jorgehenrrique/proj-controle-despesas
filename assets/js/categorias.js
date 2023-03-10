@@ -25,7 +25,7 @@ function consultaCategoriasCriadas() {
 
     let criarCategoriasFiltrada = criarCategorias.filter((categoria) => {
         return categoria.categoria.includes(entrada) ||
-        categoria.id === Number(entrada);
+            categoria.id === Number(entrada);
     });
 
     tabelaCategoriasFiltrados.innerHTML = '';
@@ -47,21 +47,35 @@ function listarCategorias(item) {
     <td>${item.id}</td>
     <td>${item.categoria}</td>
     <td>
-    <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
+    <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir(${item.id})">EXCLUIR</button>
     </td>
     </tr>`
 }
 
 
-function confirmaExcluir(){ // Confirmar excluir em Categorias
-    console.log('Excluir?')
+function confirmaExcluir(id) { // Confirmar excluir em Categorias
     confirmarExcluir.classList.remove('none');
+
     document.querySelector('.simExcluir').addEventListener('click', () => {
-        console.log('Deletado');
+        criarCategorias.filter((categoria, indice) => {
+            if (categoria.id == id) {
+                criarCategorias.splice(indice, 1);
+                
+                document.querySelector('.excluir-confirmado').classList.remove('none'); // Mensagem de excluído
+            }
+        });
         confirmarExcluir.classList.add('none');
+        tabelaCategoriasFiltrados.innerHTML = '';
+        listarTabelaCategorias(criarCategorias);
     });
     document.querySelector('.naoExcluir').addEventListener('click', () => {
-        console.log('Não deletado');
         confirmarExcluir.classList.add('none');
     });
 }
+
+function limpaMensagemDeletar() {
+    document.querySelector('.excluir-confirmado').classList.add('none');
+}
+setInterval(function () { // Limpar mensagem acima
+    limpaMensagemDeletar();
+}, 3000);

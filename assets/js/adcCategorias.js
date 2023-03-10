@@ -36,7 +36,6 @@ btnSalvarEdit.addEventListener('click', () => {
     }
     limpaForm();
     inputCriarCategoria.focus();
-    console.log(criarCategorias);
     tabelaCategoriasFiltrados.innerHTML = '';
     listarTabelaCategorias(criarCategorias);
 });
@@ -67,5 +66,4 @@ function salvaCategoria(entradaCategoria) {
 
     criarCategorias.push(categoria);
     identificador++;
-    console.log(criarCategorias)
 }
