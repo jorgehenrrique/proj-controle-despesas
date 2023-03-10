@@ -22,7 +22,7 @@ btnSalvarEdit.addEventListener('click', () => {
     if (inputCategoria !== '') {
         verificaCategoria(inputCategoria);
         criarCategorias.push(inputCategoria);
-        exibirMensagens(true, 'Categoria adicionada com sucesso!');
+        // exibirMensagens(true, 'Categoria adicionada com sucesso!');
     } else {
         exibirMensagens(false, 'Informe um valor válido!');
     }
@@ -40,10 +40,11 @@ function verificaCategoria(inputCategoria) {
         console.log('input', inputCategoria, categoria)
         if (inputCategoria === categoria) {
             exibirMensagens(false, 'Categoria já existe');
-            document.querySelector('.mensagem-sucesso').classList.add('mensagem-alerta');
-            document.querySelector('.mensagem-sucesso').classList.remove('none');
+            console.log('input02', inputCategoria, categoria)
+        } else {
+            criarCategorias.push(inputCategoria);
+            exibirMensagens(true, 'Categoria adicionada com sucesso!');
         }
-        console.log('input02', inputCategoria, categoria)
     });
 
 }
