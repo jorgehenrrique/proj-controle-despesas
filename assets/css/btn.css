@@ -11,8 +11,8 @@ button{
     color: var(--text-color);
 }
 button:hover{
-    background-color: var(--btn-color-hover);
-    box-shadow: 5px 10px 40px 5px #2196F3;
+    /* background-color: var(--btn-color-hover); */
+    box-shadow: 0px 0px 20px 0px #2196F3;
 }
 button:active{
     background-color: var(--btn-color-active);
@@ -45,7 +45,7 @@ button:active{
     border-bottom: 4px solid #ee3a58;
 }
 .btn-cancelar:hover{
-    box-shadow: 5px 10px 40px 5px #ee3a58;
+    box-shadow: 0px 0px 20px 0px #ee3a58;
 }
 
 
