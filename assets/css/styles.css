@@ -91,7 +91,6 @@ section{
     align-self: center;
     display: flex;
     align-items: center;
-
 }
 .btn-adicionar-despesa{
     flex-grow: 1;

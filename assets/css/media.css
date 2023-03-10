@@ -1,0 +1,35 @@
+/* || Media query */
+
+@media screen and (max-width:  810px){ 
+    .container, body, .container-despesa, .container-categorias{
+        font-size: calc(1rem + 1vw);
+    }
+    /* || Tela Home */
+    .filtro{
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn-adicionar-despesa{
+        margin-left: 0rem;
+    }
+    .tabela{
+        width: 100%;
+    }
+
+    /* || Tela Categorias */
+    .tabela-categorias{
+        width: 100%;
+    }
+    .btn-adicionar-categoria{
+        margin-left: 0rem;
+    }
+
+    /* || Tela adc Despesas */
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 4rem;
+    }
+}

@@ -15,6 +15,7 @@
     width: 90%;
     align-self: center;
     height: fit-content;
+    overflow: auto;
 }
 .btn-adicionar-categoria{
     flex-grow: 1;

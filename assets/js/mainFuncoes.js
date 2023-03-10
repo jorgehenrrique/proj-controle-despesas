@@ -17,6 +17,7 @@ function limparMensagens() {
 
 // inputCriarCategoria
 // edit salvar
+// Verifica se a categoria já existe, caso nao, cria uma
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     if (inputCategoria !== '') {
@@ -36,12 +37,12 @@ setInterval(function () {
     limparMensagens();
 }, 10000);
 
+// Verifica existencia de uma categoria
 function verificaCategoria(inputCategoria) {
     let checador = 0;
     criarCategorias.forEach((categoria) => {
         if (inputCategoria === categoria) {
             exibirMensagens(false, 'Categoria já existe!');
-            console.log('input02', inputCategoria, categoria)
             checador++;
         }
     });
