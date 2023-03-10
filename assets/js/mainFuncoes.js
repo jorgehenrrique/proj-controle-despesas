@@ -20,9 +20,12 @@ function limparMensagens() {
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     if (inputCategoria !== '') {
-        verificaCategoria(inputCategoria);
-        criarCategorias.push(inputCategoria);
-        // exibirMensagens(true, 'Categoria adicionada com sucesso!');
+        if (criarCategorias.length <= 0) {
+            criarCategorias.push(inputCategoria);
+            exibirMensagens(true, 'Categoria adicionada com sucesso!');
+        } else {
+            verificaCategoria(inputCategoria);
+        }
     } else {
         exibirMensagens(false, 'Informe um valor válido!');
     }
@@ -34,17 +37,16 @@ setInterval(function () {
 }, 10000);
 
 function verificaCategoria(inputCategoria) {
-    console.log(inputCategoria)
-
+    let checador = 0;
     criarCategorias.forEach((categoria) => {
-        console.log('input', inputCategoria, categoria)
         if (inputCategoria === categoria) {
-            exibirMensagens(false, 'Categoria já existe');
+            exibirMensagens(false, 'Categoria já existe!');
             console.log('input02', inputCategoria, categoria)
-        } else {
-            criarCategorias.push(inputCategoria);
-            exibirMensagens(true, 'Categoria adicionada com sucesso!');
+            checador++;
         }
     });
-
+    if (checador === 0) {
+        criarCategorias.push(inputCategoria);
+        exibirMensagens(true, 'Categoria adicionada com sucesso!');
+    }
 }
