@@ -28,6 +28,9 @@
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
+    #filtrar-cat{
+        color: var(--text-color-dark);
+    }
     .container-editar{
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);

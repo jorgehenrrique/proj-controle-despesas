@@ -10,8 +10,6 @@ btnCategoriasFiltrar.addEventListener('click', () => {
 inputCategoriasFiltrar.addEventListener('keyup', () => {
     consultaCategoriasCriadas()
 
-    console.log('acesso ok', criarCategorias)
-
     if (consultaCategoriasCriadas().length === 0) { // se a nova lista nao tem valores, exibe mensagem
         tabelaCategoriasFiltrados.innerHTML = `<tr>
             <td colspan="3">Nenhum dado encontrado</td>
