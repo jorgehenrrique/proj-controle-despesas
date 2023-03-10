@@ -104,18 +104,6 @@ function limpaForm(){ // Limpa todos formularios
     }
 }
 
-// function confirmaExcluir(){ // Confirmar excluir em Categorias
-//     console.log('Excluir?')
-//     confirmarExcluir.classList.remove('none');
-//     document.querySelector('.simExcluir').addEventListener('click', () => {
-//         console.log('Deletado');
-//         confirmarExcluir.classList.add('none');
-//     });
-//     document.querySelector('.naoExcluir').addEventListener('click', () => {
-//         console.log('Não deletado');
-//         confirmarExcluir.classList.add('none');
-//     });
-// }
 
 // --------------------------------------------------------
 
