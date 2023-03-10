@@ -81,9 +81,6 @@
                 </tr>
             </tbody>
             </table>
-            <div class="btn-adicionar">
-                <!-- <button class="btn-adicionar-despesa">ADICIONAR DESPESA</button> -->
-            </div>
         </div>
     </div>
 
@@ -124,7 +121,7 @@
         <div class="filtro">
             <label for="filtrar-cat"></label>
             <input type="text" placeholder="Filtrar" id="filtrar-cat">
-            <button class="btn-filtrar btn-filtrar-categorias">FILTRAR</button>
+            <button class="btn-filtrar btn-filtrar-categorias">LIMPAR</button>
             <button class="btn-adicionar-categoria">ADICIONAR CATEGORIA</button>
         </div>
         <div class="confir-excluir none">
@@ -141,26 +138,16 @@
                     <th>| Ações</th>
                 </tr>
                 </thead>
-            <tbody>
-                <tr>
-                    <td>23032023</td>
-                    <td>Jogos</td>
-                    <td>
-                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>23032023</td>
-                    <td>Lanche</td>
-                    <td>
-                        <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
-                    </td>
-                </tr>
-            </tbody>
+                <tbody id="tabela-categorias-filtrados">
+                    <!-- <tr>
+                        <td>23032023</td>
+                        <td>Jogos</td>
+                        <td>
+                            <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir()">EXCLUIR</button>
+                        </td>
+                    </tr> -->
+                </tbody>
             </table>
-            <div class="btn-adicionar">
-                <!-- <button class="btn-adicionar-categoria">ADICIONAR CATEGORIA</button> -->
-            </div>
         </div>
     </div>
 

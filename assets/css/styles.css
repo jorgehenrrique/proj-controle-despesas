@@ -131,11 +131,11 @@ th{
 tr:nth-child(2n){
     background-color: var(--bkg-sub-color);
 }
-.btn-adicionar{
+/* .btn-adicionar{
     margin: 3rem 0;
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 
 /* || Display none */

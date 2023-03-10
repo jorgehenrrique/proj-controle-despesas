@@ -25,7 +25,8 @@ btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
-            criarCategorias.push(inputCategoria);
+            // criarCategorias.push(inputCategoria);
+            salvaCategoria(inputCategoria);
             exibirMensagens(true, 'Categoria adicionada com sucesso!');
         } else {
             verificaCategoria(inputCategoria);
@@ -34,20 +35,37 @@ btnSalvarEdit.addEventListener('click', () => {
         exibirMensagens(false, 'Informe um valor válido!');
     }
     limpaForm();
+    inputCriarCategoria.focus();
     console.log(criarCategorias);
+    tabelaCategoriasFiltrados.innerHTML = '';
+    listarTabelaCategorias(criarCategorias);
 });
 
 // Verifica existencia de uma categoria
 function verificaCategoria(inputCategoria) {
     let checador = 0;
     criarCategorias.forEach((categoria) => {
-        if (inputCategoria === categoria) {
+        if (inputCategoria === categoria.categoria) {
             exibirMensagens(false, 'Categoria já existe!');
             checador++;
         }
     });
     if (checador === 0) {
-        criarCategorias.push(inputCategoria);
+        // criarCategorias.push(inputCategoria);
+        salvaCategoria(inputCategoria);
         exibirMensagens(true, 'Categoria adicionada com sucesso!');
     }
+}
+
+
+let identificador = 100;
+function salvaCategoria(entradaCategoria) {
+    const categoria = {
+        categoria: entradaCategoria,
+        id: identificador
+    };
+
+    criarCategorias.push(categoria);
+    identificador++;
+    console.log(criarCategorias)
 }
