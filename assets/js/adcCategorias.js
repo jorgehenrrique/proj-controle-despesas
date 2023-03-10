@@ -51,7 +51,6 @@ function verificaCategoria(inputCategoria) {
         }
     });
     if (checador === 0) {
-        // criarCategorias.push(inputCategoria);
         salvaCategoria(inputCategoria);
         exibirMensagens(true, 'Categoria adicionada com sucesso!');
     }
