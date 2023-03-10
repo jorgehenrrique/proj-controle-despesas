@@ -25,7 +25,6 @@ btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
-            // criarCategorias.push(inputCategoria);
             salvaCategoria(inputCategoria);
             exibirMensagens(true, 'Categoria adicionada com sucesso!');
         } else {

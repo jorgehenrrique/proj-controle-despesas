@@ -1,6 +1,13 @@
 const tabelaCategoriasFiltrados = document.querySelector('#tabela-categorias-filtrados');
 
-btnCategoriasFiltrar.addEventListener('click', () => {
+// btnCategoriasFiltrar.addEventListener('click', () => {
+//     inputCategoriasFiltrar.value = '';
+//     tabelaCategoriasFiltrados.innerHTML = '';
+//     inputCategoriasFiltrar.focus();
+//     listarTabelaCategorias(criarCategorias);
+// });
+
+inputCategoriasFiltrar.addEventListener('search', () => {
     inputCategoriasFiltrar.value = '';
     tabelaCategoriasFiltrados.innerHTML = '';
     inputCategoriasFiltrar.focus();
