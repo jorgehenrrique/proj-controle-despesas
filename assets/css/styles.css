@@ -87,11 +87,18 @@ section{
 
 /* || Botao filtrar */
 .filtro{
-    width: 80%;
+    width: 90%;
     align-self: center;
+    display: flex;
+    align-items: center;
+
+}
+.btn-adicionar-despesa{
+    flex-grow: 1;
+    margin-left: 6rem;
 }
 #filtrar, #filtrar-cat{
-    width: 50%;
+    width: 60%;
     border-bottom: .1rem solid #7f7f7f ;
     padding: 1.4rem;
     font-size: 1.6rem;
@@ -101,11 +108,11 @@ section{
 
 /* || Tabela */
 .tabela{
-    width: 80%;
+    width: 90%;
     align-self: center;
     /* height: fit-content; */
-    /* max-height: 40.5rem; */
-    max-height: 60%;
+    /* max-height: 10.5rem; */
+    max-height: 50%;
     overflow: auto;
 }
 table{
