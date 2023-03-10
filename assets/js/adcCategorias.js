@@ -10,13 +10,16 @@ function exibirMensagens(status, mensagem) {
         document.querySelector('.mensagem-sucesso').classList.remove('none');
     }
 }
-function limparMensagens() {
+function limparMensagensAdcCategorias() {
     document.querySelector('.mensagem-sucesso').classList.add('none');
     document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
 }
+setInterval(function () {
+    limparMensagensAdcCategorias();
+}, 10000);
 
 // inputCriarCategoria
-// edit salvar
+// edit/adc salvar
 // Verifica se a categoria já existe, caso nao, cria uma
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
@@ -33,9 +36,6 @@ btnSalvarEdit.addEventListener('click', () => {
     limpaForm();
     console.log(criarCategorias);
 });
-setInterval(function () {
-    limparMensagens();
-}, 10000);
 
 // Verifica existencia de uma categoria
 function verificaCategoria(inputCategoria) {

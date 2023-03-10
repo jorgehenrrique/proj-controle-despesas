@@ -95,7 +95,7 @@ btnSalvarDespesa.addEventListener('click', () => {
 btnCancelarEdit.addEventListener('click', () => {
     limpaForm();
     chamaCategorias()
-    limparMensagens()
+    limparMensagensAdcCategorias()
 });
 
 function limpaForm(){ // Limpa todos formularios
