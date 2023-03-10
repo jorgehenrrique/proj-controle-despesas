@@ -25,7 +25,8 @@ const inputHomeFiltrar = document.querySelector('#filtrar'); // Home filtrar inp
 const inputCategoriasFiltrar = document.querySelector('#filtrar-cat'); // Categorias filtrar input
 
 // || Input form de adc despesa
-const inputBusqueCategoria = document.querySelector('#categoria');
+// const inputBusqueCategoria = document.querySelector('#categoria');
+const inputSelecioneCategoria = document.querySelector('#escolha');
 const inputDataVencimento = document.querySelector('#vencimento');
 const inputDespesa = document.querySelector('#despesa');
 const inputValor = document.querySelector('#valor');

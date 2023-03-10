@@ -36,6 +36,7 @@ btnSalvarEdit.addEventListener('click', () => {
     limpaForm();
     inputCriarCategoria.focus();
     tabelaCategoriasFiltrados.innerHTML = '';
+    inputSelecioneCategoria.innerHTML = ''; // teste
     listarTabelaCategorias(criarCategorias);
 });
 

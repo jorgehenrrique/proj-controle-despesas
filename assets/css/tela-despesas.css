@@ -17,11 +17,11 @@ form{
     box-shadow: 0px 10px 20px 1px var(--bkg-sub-color) ;
     border-bottom: 4px solid #7f7f7f46;
 }
-/* .h1-form{
-    text-align: center;
-    margin-bottom: 6rem;
-    color: var(--btn-color);
-} */
+
+/* || Select option */
+#escolha{
+    margin-bottom: 4rem;
+}
 
 /* || Imputs */
 .container-despesa label{
@@ -40,8 +40,3 @@ form{
     justify-content: center;
     margin-bottom: 4rem;
 }
-/* .btn-despesa-cancelar{
-    background-color: var(--text-color-dark);
-    color: #ef7085;
-    border: .1rem solid #ee3a58;
-} */
