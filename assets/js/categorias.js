@@ -11,7 +11,7 @@ inputCategoriasFiltrar.addEventListener('search', () => {
     if (!inputCategoriasFiltrar.value.length) {
         inputCategoriasFiltrar.value = '';
         tabelaCategoriasFiltrados.innerHTML = '';
-        inputSelecioneCategoria.innerHTML = ''; // teste
+        inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
         inputCategoriasFiltrar.focus();
         listarTabelaCategorias(criarCategorias);
     }
@@ -37,7 +37,7 @@ function consultaCategoriasCriadas() {
     });
 
     tabelaCategoriasFiltrados.innerHTML = '';
-    inputSelecioneCategoria.innerHTML = ''; // teste
+    inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
     listarTabelaCategorias(criarCategoriasFiltrada)
 
     return criarCategoriasFiltrada;
@@ -58,13 +58,12 @@ function listarCategorias(item) {
     <td>
     <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir(${item.id})">EXCLUIR</button>
     </td>
-    </tr>`
+    </tr>`;
 
-
+    // Aparece em adc categorias
     inputSelecioneCategoria.innerHTML += `
     <option value="${item.id}">${item.categoria}</option>
     `;
-    
 }
 
 
@@ -81,7 +80,7 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
         });
         confirmarExcluir.classList.add('none');
         tabelaCategoriasFiltrados.innerHTML = '';
-        inputSelecioneCategoria.innerHTML = ''; // teste
+        inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
         listarTabelaCategorias(criarCategorias);
     });
     document.querySelector('.naoExcluir').addEventListener('click', () => {
