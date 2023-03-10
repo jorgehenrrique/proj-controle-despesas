@@ -8,10 +8,12 @@ const tabelaCategoriasFiltrados = document.querySelector('#tabela-categorias-fil
 // });
 
 inputCategoriasFiltrar.addEventListener('search', () => {
-    inputCategoriasFiltrar.value = '';
-    tabelaCategoriasFiltrados.innerHTML = '';
-    inputCategoriasFiltrar.focus();
-    listarTabelaCategorias(criarCategorias);
+    if (!inputCategoriasFiltrar.value.length) {
+        inputCategoriasFiltrar.value = '';
+        tabelaCategoriasFiltrados.innerHTML = '';
+        inputCategoriasFiltrar.focus();
+        listarTabelaCategorias(criarCategorias);
+    }
 });
 
 inputCategoriasFiltrar.addEventListener('keyup', () => {
@@ -65,7 +67,7 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
         criarCategorias.filter((categoria, indice) => {
             if (categoria.id == id) {
                 criarCategorias.splice(indice, 1);
-                
+
                 document.querySelector('.excluir-confirmado').classList.remove('none'); // Mensagem de excluído
             }
         });
