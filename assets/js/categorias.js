@@ -7,7 +7,7 @@ const tabelaCategoriasFiltrados = document.querySelector('#tabela-categorias-fil
 //     listarTabelaCategorias(criarCategorias);
 // });
 
-inputCategoriasFiltrar.addEventListener('search', () => {
+inputCategoriasFiltrar.addEventListener('search', () => { // Quando clica no (x) do search
     if (!inputCategoriasFiltrar.value.length) {
         inputCategoriasFiltrar.value = '';
         // tabelaCategoriasFiltrados.innerHTML = '';
@@ -22,7 +22,7 @@ inputCategoriasFiltrar.addEventListener('keyup', () => {
 
     if (consultaCategoriasCriadas().length === 0) { // se a nova lista nao tem valores, exibe mensagem
         tabelaCategoriasFiltrados.innerHTML = `<tr>
-            <td colspan="3">Nenhum dado encontrado</td>
+            <td colspan="3">Nenhuma categoria encontrada</td>
         </tr>`;
     }
 });

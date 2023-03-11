@@ -24,7 +24,6 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
         criaDespesas.filter((despesa, indice) => {
             if (despesa.id == id) {
                 criaDespesas.splice(indice, 1);
-
                 document.querySelector('.excluir-confirmado-home').classList.remove('none');
             }
         });
@@ -40,4 +39,36 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
 function alterarStatus() {
     console.log('Em construcao');
     alert('Calma!!');
+}
+
+// || Filtro de busca na tela home
+inputHomeFiltrar.addEventListener('keyup', () => {
+    consultaDespesasCriadas()
+
+    if (consultaDespesasCriadas().length === 0) { // se a nova lista nao tem valores, exibe mensagem
+        tabelaDespesas.innerHTML = `<tr>
+            <td colspan="4">Nenhuma despesa encontrada</td>
+        </tr>`;
+    }
+});
+
+inputHomeFiltrar.addEventListener('search', () => { // Quando clica no (x) do search
+    if (!inputHomeFiltrar.value.length) {
+        inputHomeFiltrar.value = '';
+        inputHomeFiltrar.focus();
+        listarTabelaDespesas(criaDespesas);
+    }
+});
+
+function consultaDespesasCriadas() {
+    let entrada = inputHomeFiltrar.value.trim().toLowerCase();
+
+    let criarDespesasFiltradas = criaDespesas.filter((despesa) => {
+        return despesa.despesa.toLowerCase().includes(entrada) ||
+            despesa.id === Number(entrada);
+    });
+
+    listarTabelaDespesas(criarDespesasFiltradas)
+
+    return criarDespesasFiltradas;
 }
