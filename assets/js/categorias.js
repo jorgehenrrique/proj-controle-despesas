@@ -48,9 +48,8 @@ function listarTabelaCategorias(array) { // Passa um array para listarCategorias
     tabelaCategoriasFiltrados.innerHTML = ''; // Limpar tela
     inputSelecioneCategoria.innerHTML = ''; // Limpar tela
 
-    array.forEach(elemento => { // Chama a listarCategorias, para cada elemento do array
-        listarCategorias(elemento)
-    });
+    // Chama a listarCategorias, para cada elemento do array
+    array.forEach(elemento => listarCategorias(elemento));
 }
 
 

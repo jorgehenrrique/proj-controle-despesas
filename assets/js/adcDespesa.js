@@ -56,8 +56,8 @@ function checaData(dataVencimento) {
     }
 }
 
+let codigo = 0;
 function adicionaDespesa(categoria, vencimento, nomeDespesa, valor) { // Cria um objeto despesa, e salva no array
-    let codigo = 0;
     const despesa = {
         categoria: categoria,
         data: vencimento,

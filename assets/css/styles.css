@@ -121,7 +121,7 @@ table{
 }
 th, td{
     padding: 8px 5px;
-    text-align: justify;
+    text-align: center;
     white-space: nowrap;
     border-bottom: .1rem solid #7f7f7f46 ;
 }
@@ -132,12 +132,6 @@ th{
 tr:nth-child(2n){
     background-color: var(--bkg-sub-color);
 }
-/* .btn-adicionar{
-    margin: 3rem 0;
-    display: flex;
-    justify-content: flex-end;
-} */
-
 
 /* || Mensagem de excluir tela home */
 .confir-excluir-home, .excluir-confirmado-home{

@@ -2,9 +2,8 @@
 function listarTabelaDespesas(array) {
     tabelaDespesas.innerHTML = ''; // Limpar tela
 
-    array.forEach(elemento => { // Chama a listarDespesas, para cada elemento
-        listarDespesas(elemento)
-    });
+    // Chama a listarDespesas, para cada elemento
+    array.forEach(elemento => listarDespesas(elemento));
 }
 
 function listarDespesas(despesa) {
