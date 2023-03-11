@@ -100,16 +100,15 @@ setInterval(function () { // Limpar mensagem acima
 }, 3000);
 
 
-(() => {
+(() => { // Restaura lista local em JSON e converte para JS
     // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
     // Chama arquivo local e converte para array JS
-    const categoriasRestauradas  = JSON.parse(localStorage.getItem('categorias'));
+    const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
     console.log("🚀 ~ file: adcCategorias.js:87:", categoriasRestauradas)
 
     for (let cat of categoriasRestauradas) {
         salvaCategoria(cat.categoria);
     }
 })()
-
 

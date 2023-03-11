@@ -19,12 +19,12 @@ setInterval(function () {
 }, 10000);
 
 // inputCriarCategoria
-// edit/adc salvar
+// edit/adicionar salvar
 // Verifica se a categoria já existe, caso nao, cria uma
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     inputCategoria = inputCategoria.replace(' ', '-');
-    
+
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
             salvaCategoria(inputCategoria);
