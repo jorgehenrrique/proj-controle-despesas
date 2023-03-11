@@ -44,11 +44,11 @@ function consultaCategoriasCriadas() {
 }
 
 
-function listarTabelaCategorias(array) { // Chama a listarCategorias, para cada item
+function listarTabelaCategorias(array) { // Passa um array para listarCategorias
     tabelaCategoriasFiltrados.innerHTML = ''; // Limpar tela
     inputSelecioneCategoria.innerHTML = ''; // Limpar tela
 
-    array.forEach(elemento => {
+    array.forEach(elemento => { // Chama a listarCategorias, para cada elemento do array
         listarCategorias(elemento)
     });
 }

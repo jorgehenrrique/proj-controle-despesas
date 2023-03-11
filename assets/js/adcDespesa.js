@@ -1,3 +1,5 @@
+const tabelaDespesas = document.querySelector('#tabela-despesas');
+
 formularios.forEach(form => form.addEventListener('submit', e => e.preventDefault()));
 
 let criaDespesas = [];
@@ -64,6 +66,22 @@ function adicionaDespesa(categoria, vencimento, nomeDespesa, valor) { // Cria um
 
     criaDespesas.push(despesa); // Adc obj no array
     console.log(criaDespesas) //
+    salvarDespesasLocal(); // salva local
+    listarTabelaDespesas(criaDespesas);
 }
 
+// || Salva local e restaura
+function salvarDespesasLocal() { // Salva lista despesas local em JSON
+    // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
+    localStorage.setItem('despesas', JSON.stringify(criaDespesas));
+}
+
+(() => { // Restaura lista despesas local em JSON e converte para JS
+    // Chama arquivo local e converte para array JS
+    const despesasRestauradas = JSON.parse(localStorage.getItem('despesas'));
+
+    for (let des of despesasRestauradas) {
+        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor);
+    }
+})()
 
