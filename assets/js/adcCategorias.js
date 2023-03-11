@@ -66,4 +66,12 @@ function salvaCategoria(entradaCategoria) {
 
     criarCategorias.push(categoria);
     identificador++;
+    salvarCategoriasLocal()
+}
+
+
+function salvarCategoriasLocal() {
+    const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
+    console.log(categoriasJSON)
+    localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
 }

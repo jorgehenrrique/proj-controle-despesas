@@ -82,6 +82,7 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
         tabelaCategoriasFiltrados.innerHTML = '';
         inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
         listarTabelaCategorias(criarCategorias);
+        salvarCategoriasLocal() // Atualiza lista local
     });
     document.querySelector('.naoExcluir').addEventListener('click', () => {
         confirmarExcluir.classList.add('none');

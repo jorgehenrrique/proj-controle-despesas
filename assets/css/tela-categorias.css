@@ -27,7 +27,7 @@
 }
 
 .confir-excluir, .excluir-confirmado{
-    width: 80%;
+    width: 90%;
     background-color: #e490367b;
     color: red;
     font-weight: bold;
@@ -37,6 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 .excluir-confirmado{
     background-color: #70ef797b;
