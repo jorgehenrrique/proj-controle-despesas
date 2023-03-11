@@ -24,6 +24,7 @@ setInterval(function () {
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     inputCategoria = inputCategoria.replace(' ', '-');
+    
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
             salvaCategoria(inputCategoria);
@@ -36,14 +37,15 @@ btnSalvarEdit.addEventListener('click', () => {
     }
     limpaForm();
     inputCriarCategoria.focus();
-    tabelaCategoriasFiltrados.innerHTML = '';
-    inputSelecioneCategoria.innerHTML = ''; // teste
-    listarTabelaCategorias(criarCategorias);
+    // tabelaCategoriasFiltrados.innerHTML = '';
+    // inputSelecioneCategoria.innerHTML = ''; // teste
+    // listarTabelaCategorias(criarCategorias);
 });
 
 // Verifica existencia de uma categoria
 function verificaCategoria(inputCategoria) {
     let checador = 0;
+
     criarCategorias.forEach((categoria) => {
         if (inputCategoria === categoria.categoria) {
             exibirMensagens(false, 'Categoria já existe!');
@@ -67,11 +69,13 @@ function salvaCategoria(entradaCategoria) {
     criarCategorias.push(categoria);
     identificador++;
     salvarCategoriasLocal()
+    listarTabelaCategorias(criarCategorias);
 }
 
 
-function salvarCategoriasLocal() {
+function salvarCategoriasLocal() { // Salva lista local em JSON
     const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
-    console.log(categoriasJSON)
+    console.log("🚀 ~ file: adcCategorias.js:78:", categoriasJSON)
     localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
 }
+

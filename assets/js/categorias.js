@@ -10,8 +10,8 @@ const tabelaCategoriasFiltrados = document.querySelector('#tabela-categorias-fil
 inputCategoriasFiltrar.addEventListener('search', () => {
     if (!inputCategoriasFiltrar.value.length) {
         inputCategoriasFiltrar.value = '';
-        tabelaCategoriasFiltrados.innerHTML = '';
-        inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
+        // tabelaCategoriasFiltrados.innerHTML = '';
+        // inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
         inputCategoriasFiltrar.focus();
         listarTabelaCategorias(criarCategorias);
     }
@@ -36,8 +36,8 @@ function consultaCategoriasCriadas() {
             categoria.id === Number(entrada);
     });
 
-    tabelaCategoriasFiltrados.innerHTML = '';
-    inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
+    // tabelaCategoriasFiltrados.innerHTML = '';
+    // inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
     listarTabelaCategorias(criarCategoriasFiltrada)
 
     return criarCategoriasFiltrada;
@@ -45,6 +45,9 @@ function consultaCategoriasCriadas() {
 
 
 function listarTabelaCategorias(array) { // Chama a listarCategorias, para cada item
+    tabelaCategoriasFiltrados.innerHTML = ''; // Limpar tela
+    inputSelecioneCategoria.innerHTML = ''; // Limpar tela
+
     array.forEach(elemento => {
         listarCategorias(elemento)
     });
@@ -79,8 +82,8 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
             }
         });
         confirmarExcluir.classList.add('none');
-        tabelaCategoriasFiltrados.innerHTML = '';
-        inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
+        // tabelaCategoriasFiltrados.innerHTML = '';
+        // inputSelecioneCategoria.innerHTML = ''; // Aparece em adc categorias
         listarTabelaCategorias(criarCategorias);
         salvarCategoriasLocal() // Atualiza lista local
     });
@@ -95,3 +98,18 @@ function limpaMensagemDeletar() {
 setInterval(function () { // Limpar mensagem acima
     limpaMensagemDeletar();
 }, 3000);
+
+
+(() => {
+    const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
+    console.log("🚀 ~ file: adcCategorias.js:85:", restauraCategorias)
+
+    const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
+    console.log("🚀 ~ file: adcCategorias.js:87:", categoriasRestauradas)
+
+    for (let cat of categoriasRestauradas) {
+        salvaCategoria(cat.categoria);
+    }
+})()
+
+
