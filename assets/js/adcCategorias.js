@@ -74,8 +74,9 @@ function salvaCategoria(entradaCategoria) {
 
 
 function salvarCategoriasLocal() { // Salva lista local em JSON
-    const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
-    console.log("🚀 ~ file: adcCategorias.js:78:", categoriasJSON)
-    localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
+    // const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
+    // localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
+    // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
+    localStorage.setItem('categorias', JSON.stringify(criarCategorias));
 }
 

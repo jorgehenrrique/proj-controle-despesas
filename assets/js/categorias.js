@@ -101,10 +101,10 @@ setInterval(function () { // Limpar mensagem acima
 
 
 (() => {
-    const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
-    console.log("🚀 ~ file: adcCategorias.js:85:", restauraCategorias)
-
-    const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
+    // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
+    // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
+    // Chama arquivo local e converte para array JS
+    const categoriasRestauradas  = JSON.parse(localStorage.getItem('categorias'));
     console.log("🚀 ~ file: adcCategorias.js:87:", categoriasRestauradas)
 
     for (let cat of categoriasRestauradas) {
