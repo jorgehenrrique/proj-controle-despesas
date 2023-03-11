@@ -52,6 +52,7 @@ function chamaDespesa(){
     limpaHome()
     limpaCategorias()
     limpaEditar()
+    limparMensagens();
     telaDespesa.classList.remove('none');
 }
 function limpaDespesa(){
@@ -64,6 +65,7 @@ function chamaCategorias(){
     limpaHome()
     limpaDespesa()
     limpaEditar()
+    limparMensagens();
     telaCategorias.classList.remove('none');
 }
 function limpaCategorias(){
@@ -85,18 +87,19 @@ function limpaEditar(){
 // despesa cancelar
 btnCancelarDespesa.addEventListener('click', () => {
     limpaForm();
-    chamaHome()
+    chamaHome();
+    limparMensagens();
 });
-// despesa salvar
-btnSalvarDespesa.addEventListener('click', () => {
+// // despesa salvar
+// btnSalvarDespesa.addEventListener('click', () => {
 
-});
+// });
 
 // edit/adc cancelar
 btnCancelarEdit.addEventListener('click', () => {
     limpaForm();
-    chamaCategorias()
-    limparMensagensAdcCategorias()
+    chamaCategorias();
+    limparMensagens();
 });
 
 function limpaForm(){ // Limpa todos formularios
@@ -108,3 +111,28 @@ function limpaForm(){ // Limpa todos formularios
 
 // --------------------------------------------------------
 
+// Mensagens das telas, adc categoria e adc despesas
+function exibirMensagens(status, mensagem) {
+    document.querySelector('.mensagem-adc-categoria').innerHTML = mensagem;
+    document.querySelector('.mensagem-adc-despesa').innerHTML = mensagem;
+    if (status) {
+        document.querySelector('.mensagem-adc-categoria').classList.remove('mensagem-alerta');
+        document.querySelector('.mensagem-adc-categoria').classList.remove('none');
+        document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
+        document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+    } else {
+        document.querySelector('.mensagem-adc-categoria').classList.add('mensagem-alerta');
+        document.querySelector('.mensagem-adc-categoria').classList.remove('none');
+        document.querySelector('.mensagem-adc-despesa').classList.add('mensagem-alerta');
+        document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+    }
+}
+function limparMensagens() {
+    document.querySelector('.mensagem-adc-categoria').classList.add('none');
+    document.querySelector('.mensagem-adc-categoria').classList.remove('mensagem-alerta');
+    document.querySelector('.mensagem-adc-despesa').classList.add('none');
+    document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
+}
+setInterval(function () {
+    limparMensagens();
+}, 10000);

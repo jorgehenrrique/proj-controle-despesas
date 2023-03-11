@@ -65,8 +65,9 @@ function listarCategorias(item) {
 
     // Aparece em adc categorias
     inputSelecioneCategoria.innerHTML += `
-    <option value="${item.id}">${item.categoria}</option>
+    <option value="${item.categoria}">${item.categoria}</option>
     `;
+    // <option value="${item.id}">${item.categoria}</option> // trocado id por categoria, para pega-la pelo input
 }
 
 
@@ -105,7 +106,6 @@ setInterval(function () { // Limpar mensagem acima
     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
     // Chama arquivo local e converte para array JS
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
-    console.log("🚀 ~ file: adcCategorias.js:87:", categoriasRestauradas)
 
     for (let cat of categoriasRestauradas) {
         salvaCategoria(cat.categoria);

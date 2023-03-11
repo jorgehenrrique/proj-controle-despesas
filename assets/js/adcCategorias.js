@@ -1,25 +1,31 @@
 let criarCategorias = [];
 
-function exibirMensagens(status, mensagem) {
-    document.querySelector('.mensagem-sucesso').innerHTML = mensagem;
-    if (status) {
-        document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
-        document.querySelector('.mensagem-sucesso').classList.remove('none');
-    } else {
-        document.querySelector('.mensagem-sucesso').classList.add('mensagem-alerta');
-        document.querySelector('.mensagem-sucesso').classList.remove('none');
-    }
-}
-function limparMensagensAdcCategorias() {
-    document.querySelector('.mensagem-sucesso').classList.add('none');
-    document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
-}
-setInterval(function () {
-    limparMensagensAdcCategorias();
-}, 10000);
+// function exibirMensagens(status, mensagem) {
+//     document.querySelector('.mensagem-sucesso').innerHTML = mensagem;
+//     document.querySelector('.mensagem-adc-despesa').innerHTML = mensagem;
+//     if (status) {
+//         document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
+//         document.querySelector('.mensagem-sucesso').classList.remove('none');
+//         document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
+//         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+//     } else {
+//         document.querySelector('.mensagem-sucesso').classList.add('mensagem-alerta');
+//         document.querySelector('.mensagem-sucesso').classList.remove('none');
+//         document.querySelector('.mensagem-adc-despesa').classList.add('mensagem-alerta');
+//         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+//     }
+// }
+// function limparMensagensAdcCategorias() {
+//     document.querySelector('.mensagem-sucesso').classList.add('none');
+//     document.querySelector('.mensagem-sucesso').classList.remove('mensagem-alerta');
+//     document.querySelector('.mensagem-adc-despesa').classList.add('none');
+//     document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
+// }
+// setInterval(function () {
+//     limparMensagensAdcCategorias();
+// }, 10000);
 
 // inputCriarCategoria
-// edit/adicionar salvar
 // Verifica se a categoria já existe, caso nao, cria uma
 btnSalvarEdit.addEventListener('click', () => {
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
