@@ -139,6 +139,26 @@ tr:nth-child(2n){
 } */
 
 
+/* || Mensagem de excluir tela home */
+.confir-excluir-home, .excluir-confirmado-home{
+    width: 90%;
+    background-color: #e490367b;
+    color: red;
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: var(--border-radius-8px);
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    gap: 1rem;
+}
+.excluir-confirmado-home{
+    background-color: #70ef797b;
+    color: inherit;
+}
+
 /* || Display none */
 .none{
     display: none;

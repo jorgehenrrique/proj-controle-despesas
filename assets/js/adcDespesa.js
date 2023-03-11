@@ -57,13 +57,16 @@ function checaData(dataVencimento) {
 }
 
 function adicionaDespesa(categoria, vencimento, nomeDespesa, valor) { // Cria um objeto despesa, e salva no array
+    let codigo = 0;
     const despesa = {
         categoria: categoria,
         data: vencimento,
         despesa: nomeDespesa,
-        valor: valor
+        valor: valor,
+        id: codigo
     };
 
+    codigo++;
     criaDespesas.push(despesa); // Adc obj no array
     console.log(criaDespesas) //
     salvarDespesasLocal(); // salva local

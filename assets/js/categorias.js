@@ -95,6 +95,7 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
 
 function limpaMensagemDeletar() {
     document.querySelector('.excluir-confirmado').classList.add('none');
+    document.querySelector('.excluir-confirmado-home').classList.add('none'); // mensagem do home
 }
 setInterval(function () { // Limpar mensagem acima
     limpaMensagemDeletar();
