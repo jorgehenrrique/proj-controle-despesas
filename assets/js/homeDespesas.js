@@ -65,7 +65,9 @@ function consultaDespesasCriadas() {
 
     let criarDespesasFiltradas = criaDespesas.filter((despesa) => {
         return despesa.despesa.toLowerCase().includes(entrada) ||
-            despesa.id === Number(entrada);
+            despesa.id === Number(entrada) ||
+            despesa.data.includes(entrada) ||
+            despesa.valor.includes(entrada);
     });
 
     listarTabelaDespesas(criarDespesasFiltradas)

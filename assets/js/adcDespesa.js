@@ -20,7 +20,8 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         exibirMensagens(false, 'Preencha todos os campos!');
     } else {
         if (checaData(Vencimento)) {
-            adicionaDespesa(Categoria, Vencimento, Despesa, Valor);
+            let dataFormatada = checaData(Vencimento);
+            adicionaDespesa(Categoria, dataFormatada, Despesa, Valor);
             exibirMensagens(true, 'Despesa adicionada com sucesso!');
             limpaForm();
         } else {
@@ -52,7 +53,9 @@ function checaData(dataVencimento) {
     if (anoEntrada < anoAtual || (anoEntrada === anoAtual && mesEntrada < mesAtual) || (anoEntrada === anoAtual && mesEntrada === mesAtual && diaEntrada < diaAtual)) {
         return false;
     } else {
-        return true;
+        // return true;
+        // console.log(`${diaEntrada = (diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${mesEntrada = (mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`)
+        return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
     }
 }
 
