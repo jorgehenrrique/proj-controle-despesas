@@ -12,6 +12,11 @@
     --header-color-dark: #2B2B2B;
     --background-container-dark: #1C1C1C;
     --text-color-dark: #FFFFFF;
+    --animate-delay: 0.5s;
+}
+
+.animate__shakeX{
+    transition: all 1s ease-out;
 }
 
 html, a{
