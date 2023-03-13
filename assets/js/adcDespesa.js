@@ -18,6 +18,11 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
 
     if (Categoria === '' || Vencimento === '' || Despesa === '' || Valor === '') {
         exibirMensagens(false, 'Preencha todos os campos!');
+        if (Valor === '') exibirMensagens(false, 'Dê um valor a sua despesa.');
+        if (Despesa === '') exibirMensagens(false, 'Dê um nome a sua despesa.');
+        if (Vencimento === '') exibirMensagens(false, 'Selecione uma data de vencimento.');
+        // if (Categoria === '') exibirMensagens(false, 'Selecione uma categoria, crie em Categorias.');
+        if (Categoria === '') exibirMensagens(false, `Selecione uma categoria ou crie: <button onclick="chamaCategorias()">Categorias</button>`);
     } else {
         if (checaData(Vencimento)) {
             let dataFormatada = checaData(Vencimento);
