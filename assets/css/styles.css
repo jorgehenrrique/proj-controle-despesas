@@ -16,7 +16,6 @@
 
 html, a{
     color: var(--text-color);
-    /* position: relative; */
 }
 
 
@@ -38,7 +37,6 @@ header{
 .container{
     background-color: var(--background-container);
     width: 100%;
-    /* height: calc(100vh - 6rem); */
     height: 100vh;
     color: var(--text-color);
     display: flex;
@@ -110,8 +108,6 @@ section{
 .tabela{
     width: 90%;
     align-self: center;
-    /* height: fit-content; */
-    /* max-height: 10.5rem; */
     max-height: 50%;
     overflow: auto;
 }
