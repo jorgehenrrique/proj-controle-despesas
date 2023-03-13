@@ -71,8 +71,8 @@ function limpaCategorias(){
 }
 
 // editar
-btnAdcEditar.addEventListener('click', chamaEditar);
-function chamaEditar(){
+btnAdcEditar.addEventListener('click', chamaAdcEditar);
+function chamaAdcEditar(){
     limpaHome();
     limpaDespesa();
     limpaCategorias();

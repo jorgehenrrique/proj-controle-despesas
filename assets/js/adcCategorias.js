@@ -38,7 +38,7 @@ function verificaCategoria(inputCategoria) {
 
 
 let identificador = 100;
-function salvaCategoria(entradaCategoria) {
+function salvaCategoria(entradaCategoria, id = null) {
     const categoria = {
         categoria: entradaCategoria,
         id: identificador

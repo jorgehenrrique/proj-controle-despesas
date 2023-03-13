@@ -46,7 +46,8 @@ function listarCategorias(item) {
     <td>${item.id}</td>
     <td>${item.categoria}</td>
     <td>
-    <button class="btn-editar" onclick="chamaEditar()">EDITAR</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir(${item.id})">EXCLUIR</button>
+    <button class="btn-editar" onclick="chamaEditar('${item.id}', '${item.categoria}')">EDITAR</button> 
+    <button class="btn-excluir btn-cancelar" onclick="confirmaExcluir(${item.id})">EXCLUIR</button>
     </td>
     </tr>`;
 
@@ -55,7 +56,6 @@ function listarCategorias(item) {
     <option value="${item.categoria}">${item.categoria}</option>
     `;
 }
-
 
 function confirmaExcluir(id) { // Confirmar excluir em Categorias
     confirmarExcluir.classList.remove('none');
@@ -89,7 +89,7 @@ setInterval(function () { // Limpar mensagem acima
 (() => { // Restaura lista local em JSON e converte para JS
     // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
-    
+
     // Chama arquivo local e converte para array JS
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
@@ -98,3 +98,46 @@ setInterval(function () { // Limpar mensagem acima
     }
 })()
 
+function chamaEditar(id, nomeCategoria) {
+    chamaAdcEditar();
+    inputCriarCategoria.value = nomeCategoria;
+    console.log(inputCriarCategoria.value)
+    console.log(id, nomeCategoria)
+
+    // let categoriaEditada = [];
+    btnSalvarEdit.removeEventListener('click')
+    btnSalvarEdit.addEventListener('click', () => {
+        console.log('teste')
+        criarCategorias.map(categoria => {
+            console.log("🚀 ~ file: categorias.js:111:", categoria)
+            // if (categoria.id == id) categoria.categoria = nomeCategoria
+            if (categoria.id == id) {
+                categoria.categoria = inputCriarCategoria.value.trim().toUpperCase();
+                // return categoria.categoria = inputCriarCategoria.value.trim().toUpperCase();
+            }
+            // else {
+            //     return categoria.categoria = categoria.categoria;
+            // }
+            // salvaCategoria(categoria.categoria);
+        })
+    })
+    console.log("🚀 ~ file: categorias.js:121:", criarCategorias)
+
+
+    // console.log(categoriaEditada)
+    // criarCategorias = [];
+    // for (let cat of categoriaEditada) {
+    //     console.log("🚀 ~ file: categorias.js:119:", cat)
+    //     salvaCategoria(cat)
+    // }
+    // criarCategorias.filter((categoria) => {
+    //     if (categoria.id == id){
+    //     criarCategorias.replace(categoria.categoria, inputCriarCategoria.value)
+    //     }
+    // })
+    salvarCategoriasLocal()
+    listarTabelaCategorias(criarCategorias)
+    // salvaCategoria()
+    // salvaCategoria(categoria.categoria);
+    // listarTabelaCategorias(categoriaEditada);
+};
