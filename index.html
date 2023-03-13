@@ -39,11 +39,11 @@
         <div class="status-financeiro">
             <section class="status-sub-01">
                 <strong>TOTAL PAGO</strong>
-                <p class="total-pago">R$ </p>
+                <p class="total-pago">R$ 0.00</p>
             </section>
             <section class="status-sub-02">
                 <strong>TOTAL A PAGAR</strong>
-                <p class="total-pagar">R$ </p>
+                <p class="total-pagar">R$ 0.00</p>
             </section>
             <section class="status-sub-03">
                 <strong>ATRASADAS</strong>
@@ -53,7 +53,6 @@
         <div class="filtro">
             <label for="filtrar"></label>
             <input type="search" placeholder="Filtrar" id="filtrar">
-            <!-- <button class="btn-filtrar">FILTRAR</button> -->
             <button class="btn-adicionar-despesa">ADICIONAR DESPESA</button>
         </div>
         <!--  -->
@@ -77,18 +76,12 @@
                 </tr>
                 </thead>
             <tbody id="tabela-despesas">
-                <tr>
+                <!-- <tr>
                     <td>03/03/2023</td>
                     <td>Compra de lanche</td>
                     <td>R$ 50.00</td>
                     <td><button class="status pago">PENDENTE</button></td>
-                </tr>
-                <tr>
-                    <td>23/03/2023</td>
-                    <td>Compra</td>
-                    <td>R$ 78.00</td>
-                    <td><button class="status pendente">PAGO</button></td>
-                </tr>
+                </tr> -->
             </tbody>
             </table>
         </div>
@@ -100,21 +93,16 @@
 
     <!-- --------------------------------------------- TELA ADC DESPESA -->
     <div class="container-despesa animate__fadeIn none">
-        <!-- <form action="#"> -->
         <form>
             <h1>ADICIONAR DESPESA</h1>
 
             <div class="mensagem-adc-despesa none animate__fadeIn">
             </div>
-            <!-- <label for="categoria">Categoria</label>
-            <input type="text" placeholder="Busque a categoria" id="categoria"> -->
 
-            <!--  -->
             <label for="escolha">Selecione uma Categoria:</label>
             <select id="escolha" name="escolha">
                 <option value=""></option>
             </select>
-            <!--  -->
 
             <label for="vencimento">Data de Vencimento:</label>
             <input type="date" id="vencimento">
@@ -144,7 +132,6 @@
         <div class="filtro">
             <label for="filtrar-cat"></label>
             <input type="search" placeholder="Filtrar" id="filtrar-cat">
-            <!-- <button class="btn-filtrar btn-filtrar-categorias">LIMPAR</button> -->
             <button class="btn-adicionar-categoria">ADICIONAR CATEGORIA</button>
         </div>
         <div class="excluir-confirmado none">
@@ -183,7 +170,6 @@
 
     <!-- --------------------------------------------- TELA EDITAR -->
     <div class="container-editar animate__fadeIn none">
-        <!-- <form action="#"> -->
         <form>
             <h1>ADICIONAR/EDITAR CATEGORIAS</h1>
 
