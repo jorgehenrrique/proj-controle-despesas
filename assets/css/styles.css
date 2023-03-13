@@ -68,21 +68,21 @@ section{
     box-shadow: 30px 30px 50px 10px #70ef797b inset;
 }
 .status-sub-01 p{
-    color: green;
+    color: #008000;
 }
 .status-sub-02{
     border-bottom: 4px solid #ef7085;
     box-shadow: 30px 30px 50px 10px #ef70857b inset;
 }
 .status-sub-02 p{
-    color: red;
+    color: #ff0000;
 }
 .status-sub-03{
     border-bottom: 4px solid #e49036;
     box-shadow: 30px 30px 50px 10px #e490367b inset;
 }
 .status-sub-03 p{
-    color: orange;
+    color: #ffa500;
 }
 
 

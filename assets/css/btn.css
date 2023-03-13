@@ -21,17 +21,29 @@ button:active{
 
 
 /* || Status tabela */
+.status{
+    background-color: #e490367b;
+}
 .pago{
     background-color: #70ef79;
-    border-radius: var(--border-radius-8px);
-    font-weight: bold;
-    text-align: center;
+    /* border-radius: var(--border-radius-8px); */
+    /* font-weight: bold; */
+    /* text-align: center; */
 }
 .pendente{
     background-color: #ef7085;
-    border-radius: var(--border-radius-8px);
-    font-weight: bold;
-    text-align: center;
+    /* border-radius: var(--border-radius-8px); */
+    /* font-weight: bold; */
+    /* text-align: center; */
+}
+
+
+/* || Status linha */
+.pago-linha{
+    color: #51be58;
+}
+.pendente-linha{
+    color: #ef7085;
 }
 
 

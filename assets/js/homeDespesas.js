@@ -1,3 +1,6 @@
+// const statusCard = document.querySelector('.status');
+// console.log("🚀 ~ file: homeDespesas.js:2 ~ statusCard:", statusCard)
+
 // || Lista na tela Home
 function listarTabelaDespesas(array) {
     tabelaDespesas.innerHTML = ''; // Limpar tela
@@ -7,12 +10,12 @@ function listarTabelaDespesas(array) {
 }
 
 function listarDespesas(despesa) {
-    tabelaDespesas.innerHTML += `<tr>
+    tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
     <td>R$${despesa.valor}</td>
     <td>
-    <button class="pendente" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
+    <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
     <button class="btn-excluir btn-cancelar" onclick="confirmaExcluirDespesa(${despesa.id})">EXCLUIR</button>
     </td>
     </tr>`;
@@ -38,15 +41,23 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
 }
 
 function alterarStatus(id) {
-    console.log('Em construcao');
     criaDespesas.filter((despesa, indice) => {
         console.log(criaDespesas[indice].status)
         if (despesa.id == id) {
             // criaDespesas[indice].status = criaDespesas[indice].status ? true : false;
             if (criaDespesas[indice].status) {
                 criaDespesas[indice].status = false;
+                // statusCard[indice].classList.add('.pendente');
+                console.log(document.querySelector('.status'))
+                // document.querySelector('.status').classList.add('pendente');
+                // document.querySelector('.status').setAttribute('class', 'pendente');
             } else {
                 criaDespesas[indice].status = true;
+                // statusCard[indice].classList.add('.pago');
+                console.log(document.querySelector('.status'))
+                // document.querySelector('.status').classList.add('pago');
+                // document.querySelector('.status').setAttribute('class', 'pago');
+                // document.querySelector('.status').parentElement.setAttribute('class', 'pago')
             }
             console.log(criaDespesas[indice].status)
         }
