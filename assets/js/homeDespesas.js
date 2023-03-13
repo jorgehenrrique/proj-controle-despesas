@@ -16,6 +16,7 @@ function listarDespesas(despesa) {
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
     <td>R$ ${despesa.valor}</td>
+    <td>${despesa.categoria}</td>
     <td>
     <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
     <button class="btn-excluir btn-cancelar" onclick="confirmaExcluirDespesa(${despesa.id})">EXCLUIR</button>
@@ -74,7 +75,7 @@ function consultaDespesasCriadas() {
 
     let criarDespesasFiltradas = criaDespesas.filter((despesa) => {
         return despesa.despesa.toLowerCase().includes(entrada) ||
-            despesa.id === Number(entrada) ||
+            despesa.categoria.toLowerCase().includes(entrada) ||
             despesa.data.includes(entrada) ||
             despesa.valor.includes(entrada);
     });
@@ -92,8 +93,10 @@ function cards() {
 
     criaDespesas.filter((pago) => {
         if (pago.status) pagoTotal += Number(pago.valor);
-        if (!pago.status) pagarTotal += Number(pago.valor);
-        if (!pago.status) atrasadas++;
+        if (!pago.status) {
+            pagarTotal += Number(pago.valor);
+            atrasadas++;
+        }
     });
     cardTotalPago.innerText = `R$ ${pagoTotal.toFixed(2)}`
     cardTotalPagar.innerText = `R$ ${pagarTotal.toFixed(2)}`

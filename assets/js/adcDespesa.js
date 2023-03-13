@@ -31,7 +31,6 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
             exibirMensagens(true, 'Despesa adicionada com sucesso!');
             limpaForm();
         } else {
-            // exibirMensagens(false, 'Data anterior ou atual!');
             exibirMensagens(false, 'Data de vencimento deve ser posterior ao dia atual!');
         }
     }
@@ -97,7 +96,7 @@ function salvarDespesasLocal() { // Salva lista despesas local em JSON
     }
 })()
 
-// || Mensagem para dc categoria antes de despesa
+// || Mensagem para adc categoria antes de despesa
 function checaCategoriaExistente() {
     if (criarCategorias.length <= 0) {
         exibirMensagens(false, `Primeiro é preciso criar uma categoria: <button onclick="chamaCategorias()">Categorias</button>`);
