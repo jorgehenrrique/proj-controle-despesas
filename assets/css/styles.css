@@ -133,7 +133,7 @@ tr:nth-child(2n){
 .confir-excluir-home, .excluir-confirmado-home{
     width: 90%;
     background-color: #e490367b;
-    color: red;
+    color: #a20404;
     font-weight: bold;
     font-size: 2rem;
     border-radius: var(--border-radius-8px);
