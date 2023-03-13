@@ -54,7 +54,7 @@ function alterarStatus(id) {
 inputHomeFiltrar.addEventListener('keyup', () => {
     consultaDespesasCriadas()
 
-    if (consultaDespesasCriadas().length === 0) { // se a nova lista nao tem valores, exibe mensagem
+    if (consultaDespesasCriadas().length === 0) { // Se a nova lista nao tem valores, exibe mensagem
         tabelaDespesas.innerHTML = `<tr>
             <td colspan="4">Nenhuma despesa encontrada</td>
         </tr>`;
