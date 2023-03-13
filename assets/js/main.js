@@ -34,9 +34,9 @@ const inputCriarCategoria = document.querySelector('#categoria-criar');
 // home
 btnHome.addEventListener('click', chamaHome);
 function chamaHome(){
-    limpaDespesa()
-    limpaCategorias()
-    limpaEditar()
+    limpaDespesa();
+    limpaCategorias();
+    limpaEditar();
     telaHome.classList.remove('none');
 }
 function limpaHome(){
@@ -46,11 +46,12 @@ function limpaHome(){
 // despesa
 btnAdcDespesa.addEventListener('click', chamaDespesa);
 function chamaDespesa(){
-    limpaHome()
-    limpaCategorias()
-    limpaEditar()
+    limpaHome();
+    limpaCategorias();
+    limpaEditar();
     limparMensagens();
     telaDespesa.classList.remove('none');
+    checaCategoriaExistente();
 }
 function limpaDespesa(){
     telaDespesa.classList.add('none');
@@ -59,9 +60,9 @@ function limpaDespesa(){
 // categorias
 btnCategorias.addEventListener('click', chamaCategorias);
 function chamaCategorias(){
-    limpaHome()
-    limpaDespesa()
-    limpaEditar()
+    limpaHome();
+    limpaDespesa();
+    limpaEditar();
     limparMensagens();
     telaCategorias.classList.remove('none');
 }
@@ -72,9 +73,9 @@ function limpaCategorias(){
 // editar
 btnAdcEditar.addEventListener('click', chamaEditar);
 function chamaEditar(){
-    limpaHome()
-    limpaDespesa()
-    limpaCategorias()
+    limpaHome();
+    limpaDespesa();
+    limpaCategorias();
     telaEditar.classList.remove('none');
 }
 function limpaEditar(){
