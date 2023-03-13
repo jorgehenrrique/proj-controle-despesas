@@ -17,15 +17,12 @@ const btnCancelarDespesa = document.querySelector('.btn-despesa-cancelar'); // C
 const formularios = document.querySelectorAll('form');
 const btnSalvarEdit = document.querySelector('.btn-edit-salvar'); // Salvar edit/adc cate
 const btnCancelarEdit = document.querySelector('.btn-edit-cancelar'); // Cancelar edit/adc cate
-// const btnHomeFiltrar = document.querySelector('.btn-filtrar'); // Home filtrar btn
-// const btnCategoriasFiltrar = document.querySelector('.btn-filtrar-categorias'); // Categorias filtrar btn
 
 // || Inputs
 const inputHomeFiltrar = document.querySelector('#filtrar'); // Home filtrar input
 const inputCategoriasFiltrar = document.querySelector('#filtrar-cat'); // Categorias filtrar input
 
 // || Input form de adc despesa
-// const inputBusqueCategoria = document.querySelector('#categoria');
 const inputSelecioneCategoria = document.querySelector('#escolha');
 const inputDataVencimento = document.querySelector('#vencimento');
 const inputDespesa = document.querySelector('#despesa');
@@ -90,10 +87,6 @@ btnCancelarDespesa.addEventListener('click', () => {
     chamaHome();
     limparMensagens();
 });
-// // despesa salvar
-// btnSalvarDespesa.addEventListener('click', () => {
-
-// });
 
 // edit/adc cancelar
 btnCancelarEdit.addEventListener('click', () => {

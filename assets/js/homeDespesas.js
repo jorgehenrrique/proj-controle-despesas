@@ -1,9 +1,11 @@
-// const statusCard = document.querySelector('.status');
-// console.log("🚀 ~ file: homeDespesas.js:2 ~ statusCard:", statusCard)
+const cardTotalPago = document.querySelector('.total-pago');
+const cardTotalPagar = document.querySelector('.total-pagar');
+const cardAtrasadas = document.querySelector('.atrasadas');
 
 // || Lista na tela Home
 function listarTabelaDespesas(array) {
     tabelaDespesas.innerHTML = ''; // Limpar tela
+    cards(); // Exibe os cards
 
     // Chama a listarDespesas, para cada elemento
     array.forEach(elemento => listarDespesas(elemento));
@@ -13,7 +15,7 @@ function listarDespesas(despesa) {
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
-    <td>R$${despesa.valor}</td>
+    <td>R$ ${despesa.valor}</td>
     <td>
     <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
     <button class="btn-excluir btn-cancelar" onclick="confirmaExcluirDespesa(${despesa.id})">EXCLUIR</button>
@@ -42,25 +44,7 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
 
 function alterarStatus(id) {
     criaDespesas.filter((despesa, indice) => {
-        console.log(criaDespesas[indice].status)
-        if (despesa.id == id) {
-            // criaDespesas[indice].status = criaDespesas[indice].status ? true : false;
-            if (criaDespesas[indice].status) {
-                criaDespesas[indice].status = false;
-                // statusCard[indice].classList.add('.pendente');
-                console.log(document.querySelector('.status'))
-                // document.querySelector('.status').classList.add('pendente');
-                // document.querySelector('.status').setAttribute('class', 'pendente');
-            } else {
-                criaDespesas[indice].status = true;
-                // statusCard[indice].classList.add('.pago');
-                console.log(document.querySelector('.status'))
-                // document.querySelector('.status').classList.add('pago');
-                // document.querySelector('.status').setAttribute('class', 'pago');
-                // document.querySelector('.status').parentElement.setAttribute('class', 'pago')
-            }
-            console.log(criaDespesas[indice].status)
-        }
+        if (despesa.id == id) criaDespesas[indice].status = criaDespesas[indice].status ? false : true;
     })
     listarTabelaDespesas(criaDespesas);
     salvarDespesasLocal() // Atualiza lista local
@@ -98,4 +82,20 @@ function consultaDespesasCriadas() {
     listarTabelaDespesas(criarDespesasFiltradas)
 
     return criarDespesasFiltradas;
+}
+
+// || Cards total paga, total a pagar e atrasadas
+function cards() {
+    let pagoTotal = 0;
+    let pagarTotal = 0;
+    let atrasadas = 0;
+
+    criaDespesas.filter((pago) => {
+        if (pago.status) pagoTotal += Number(pago.valor);
+        if (!pago.status) pagarTotal += Number(pago.valor);
+        if (!pago.status) atrasadas++;
+    });
+    cardTotalPago.innerText = `R$ ${pagoTotal.toFixed(2)}`
+    cardTotalPagar.innerText = `R$ ${pagarTotal.toFixed(2)}`
+    cardAtrasadas.innerHTML = `${atrasadas}`
 }
