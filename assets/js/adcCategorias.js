@@ -18,9 +18,6 @@ btnSalvarEdit.addEventListener('click', () => {
     }
     limpaForm();
     inputCriarCategoria.focus();
-    // tabelaCategoriasFiltrados.innerHTML = '';
-    // inputSelecioneCategoria.innerHTML = ''; // teste
-    // listarTabelaCategorias(criarCategorias);
 });
 
 // Verifica existencia de uma categoria
@@ -57,6 +54,7 @@ function salvaCategoria(entradaCategoria) {
 function salvarCategoriasLocal() { // Salva lista local em JSON
     // const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
     // localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
+
     // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
     localStorage.setItem('categorias', JSON.stringify(criarCategorias));
 }
