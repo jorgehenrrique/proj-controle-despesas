@@ -21,7 +21,8 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
     } else {
         if (checaData(Vencimento)) {
             let dataFormatada = checaData(Vencimento);
-            adicionaDespesa(Categoria, dataFormatada, Despesa, Valor);
+            let status = false;
+            adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
             exibirMensagens(true, 'Despesa adicionada com sucesso!');
             limpaForm();
         } else {
@@ -60,20 +61,21 @@ function checaData(dataVencimento) {
 }
 
 let codigo = 0;
-function adicionaDespesa(categoria, vencimento, nomeDespesa, valor) { // Cria um objeto despesa, e salva no array
+function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, status) { // Cria um objeto despesa, e salva no array
     const despesa = {
         categoria: categoria,
         data: vencimento,
         despesa: nomeDespesa,
         valor: valor,
-        id: codigo
+        id: codigo,
+        status: status
     };
 
     codigo++;
     criaDespesas.push(despesa); // Adc obj no array
-    console.log(criaDespesas) //
     salvarDespesasLocal(); // salva local
     listarTabelaDespesas(criaDespesas);
+    console.log(criaDespesas) //
 }
 
 // || Salva local e restaura
@@ -87,7 +89,7 @@ function salvarDespesasLocal() { // Salva lista despesas local em JSON
     const despesasRestauradas = JSON.parse(localStorage.getItem('despesas'));
 
     for (let des of despesasRestauradas) {
-        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor);
+        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor, des.status);
     }
 })()
 

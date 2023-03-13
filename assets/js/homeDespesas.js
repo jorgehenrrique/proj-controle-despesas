@@ -10,9 +10,10 @@ function listarDespesas(despesa) {
     tabelaDespesas.innerHTML += `<tr>
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
-    <td>${despesa.valor}</td>
+    <td>R$${despesa.valor}</td>
     <td>
-    <button class="pendente" onclick="alterarStatus()">PENDENTE</button> <button class="btn-excluir btn-cancelar" onclick="confirmaExcluirDespesa(${despesa.id})">EXCLUIR</button>
+    <button class="pendente" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
+    <button class="btn-excluir btn-cancelar" onclick="confirmaExcluirDespesa(${despesa.id})">EXCLUIR</button>
     </td>
     </tr>`;
 }
@@ -36,9 +37,22 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
     });
 }
 
-function alterarStatus() {
+function alterarStatus(id) {
     console.log('Em construcao');
-    alert('Calma!!');
+    criaDespesas.filter((despesa, indice) => {
+        console.log(criaDespesas[indice].status)
+        if (despesa.id == id) {
+            // criaDespesas[indice].status = criaDespesas[indice].status ? true : false;
+            if (criaDespesas[indice].status) {
+                criaDespesas[indice].status = false;
+            } else {
+                criaDespesas[indice].status = true;
+            }
+            console.log(criaDespesas[indice].status)
+        }
+    })
+    listarTabelaDespesas(criaDespesas);
+    salvarDespesasLocal() // Atualiza lista local
 }
 
 // || Filtro de busca na tela home
