@@ -55,7 +55,6 @@ function checaData(dataVencimento) {
         return false;
     } else {
         // return true;
-        // console.log(`${diaEntrada = (diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${mesEntrada = (mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`)
         return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
     }
 }
