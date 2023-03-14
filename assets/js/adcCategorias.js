@@ -2,10 +2,8 @@ let criarCategorias = [];
 
 // inputCriarCategoria
 // Verifica se a categoria já existe, caso nao, cria uma
-// btnSalvarEdit.addEventListener('click', () => { //--<<
 function cadastrarCategoria() { //-->>
-    let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
-    inputCategoria = inputCategoria.replace(' ', '-');
+    let inputCategoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
 
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
@@ -56,7 +54,7 @@ function salvarCategoriasLocal() { // Salva lista local em JSON
     // const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
     // localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
 
-    // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
+    // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON) || Otimizado
     localStorage.setItem('categorias', JSON.stringify(criarCategorias));
 }
 

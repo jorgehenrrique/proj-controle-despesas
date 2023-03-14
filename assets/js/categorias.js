@@ -115,7 +115,7 @@ function editarCategoria(id) {
                 exibirMensagens(true, 'Categoria editada com sucesso!');
                 setTimeout(function () {
                     chamaCategorias();
-                }, 2000);
+                }, 1500);
             }
         }
     });
