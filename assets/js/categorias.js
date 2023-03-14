@@ -98,46 +98,36 @@ setInterval(function () { // Limpar mensagem acima
     }
 })()
 
+// || Editar categoria
 function chamaEditar(id, nomeCategoria) {
     chamaAdcEditar();
     inputCriarCategoria.value = nomeCategoria;
-    console.log(inputCriarCategoria.value)
-    console.log(id, nomeCategoria)
+    btnSalvarEdit.setAttribute('onclick', `editarCategoria(${id})`);
+}
 
-    // let categoriaEditada = [];
-    // btnSalvarEdit.removeEventListener('click')
-    btnSalvarEdit.addEventListener('click', () => {
-        console.log('teste')
-        criarCategorias.map(categoria => {
-            console.log("🚀 ~ file: categorias.js:111:", categoria)
-            // if (categoria.id == id) categoria.categoria = nomeCategoria
-            if (categoria.id == id) {
+
+function editarCategoria(id) {
+    criarCategorias.map((categoria) => {
+        if (categoria.id == id) {
+            // categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
+            if (inputCriarCategoria.value.trim() == '') {
+                exibirMensagens(false, 'Adicione um nome válido!');
+            } else {
                 categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
-                // return categoria.categoria = inputCriarCategoria.value.trim().toUpperCase();
+                exibirMensagens(true, 'Categoria editada com sucesso!');
+                setInterval(function () {
+                    chamaCategorias();
+                }, 2000);
             }
-            // else {
-            //     return categoria.categoria = categoria.categoria;
-            // }
-            // salvaCategoria(categoria.categoria);
-        })
-    })
-    console.log("🚀 ~ file: categorias.js:121:", criarCategorias)
+        }
+    });
+    salvarCategoriasLocal();
+    listarTabelaCategorias(criarCategorias);
+    limpaForm();
+    // chamaCategorias();
 
-
-    // console.log(categoriaEditada)
-    // criarCategorias = [];
-    // for (let cat of criarCategorias) {
-    //     console.log("🚀 ~ file: categorias.js:119:", cat)
-    //     salvaCategoria(cat)
-    // }
-    // criarCategorias.filter((categoria) => {
-    //     if (categoria.id == id){
-    //     criarCategorias.replace(categoria.categoria, inputCriarCategoria.value)
-    //     }
-    // })
-    salvarCategoriasLocal()
-    listarTabelaCategorias(criarCategorias)
-
-    // salvaCategoria(categoria.categoria);
-    // listarTabelaCategorias(categoriaEditada);
-};
+    // exibirMensagens(true, 'Categoria editada com sucesso!');
+    // setInterval(function () {
+    //     chamaCategorias();
+    // }, 2000);
+}

@@ -77,6 +77,7 @@ function chamaAdcEditar(){
     limpaDespesa();
     limpaCategorias();
     telaEditar.classList.remove('none');
+    btnSalvarEdit.setAttribute('onclick', `cadastrarCategoria()`); // -->>
 }
 function limpaEditar(){
     telaEditar.classList.add('none');

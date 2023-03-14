@@ -2,7 +2,8 @@ let criarCategorias = [];
 
 // inputCriarCategoria
 // Verifica se a categoria já existe, caso nao, cria uma
-btnSalvarEdit.addEventListener('click', () => {
+// btnSalvarEdit.addEventListener('click', () => { //--<<
+function cadastrarCategoria() { //-->>
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase();
     inputCategoria = inputCategoria.replace(' ', '-');
 
@@ -18,7 +19,7 @@ btnSalvarEdit.addEventListener('click', () => {
     }
     limpaForm();
     inputCriarCategoria.focus();
-});
+};
 
 // Verifica existencia de uma categoria
 function verificaCategoria(inputCategoria) {
