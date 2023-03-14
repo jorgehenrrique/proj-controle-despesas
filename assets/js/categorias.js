@@ -105,14 +105,14 @@ function chamaEditar(id, nomeCategoria) {
     console.log(id, nomeCategoria)
 
     // let categoriaEditada = [];
-    btnSalvarEdit.removeEventListener('click')
+    // btnSalvarEdit.removeEventListener('click')
     btnSalvarEdit.addEventListener('click', () => {
         console.log('teste')
         criarCategorias.map(categoria => {
             console.log("🚀 ~ file: categorias.js:111:", categoria)
             // if (categoria.id == id) categoria.categoria = nomeCategoria
             if (categoria.id == id) {
-                categoria.categoria = inputCriarCategoria.value.trim().toUpperCase();
+                categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
                 // return categoria.categoria = inputCriarCategoria.value.trim().toUpperCase();
             }
             // else {
@@ -126,7 +126,7 @@ function chamaEditar(id, nomeCategoria) {
 
     // console.log(categoriaEditada)
     // criarCategorias = [];
-    // for (let cat of categoriaEditada) {
+    // for (let cat of criarCategorias) {
     //     console.log("🚀 ~ file: categorias.js:119:", cat)
     //     salvaCategoria(cat)
     // }
@@ -137,7 +137,7 @@ function chamaEditar(id, nomeCategoria) {
     // })
     salvarCategoriasLocal()
     listarTabelaCategorias(criarCategorias)
-    // salvaCategoria()
+
     // salvaCategoria(categoria.categoria);
     // listarTabelaCategorias(categoriaEditada);
 };
