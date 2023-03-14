@@ -21,7 +21,6 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         if (Valor === '') exibirMensagens(false, 'Dê um valor a sua despesa.');
         if (Despesa === '') exibirMensagens(false, 'Dê um nome a sua despesa.');
         if (Vencimento === '') exibirMensagens(false, 'Selecione uma data de vencimento.');
-        // if (Categoria === '') exibirMensagens(false, 'Selecione uma categoria, crie em Categorias.');
         if (Categoria === '') exibirMensagens(false, `Selecione uma categoria ou crie: <button onclick="chamaCategorias()">Categorias</button>`);
     } else {
         if (checaData(Vencimento)) {
@@ -58,7 +57,6 @@ function checaData(dataVencimento) {
     if (anoEntrada < anoAtual || (anoEntrada === anoAtual && mesEntrada < mesAtual) || (anoEntrada === anoAtual && mesEntrada === mesAtual && diaEntrada < diaAtual)) {
         return false;
     } else {
-        // return true;
         return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
     }
 }
@@ -78,7 +76,6 @@ function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, status) { //
     criaDespesas.push(despesa); // Adc obj no array
     salvarDespesasLocal(); // salva local
     listarTabelaDespesas(criaDespesas);
-    console.log(criaDespesas) //
 }
 
 // || Salva local e restaura
