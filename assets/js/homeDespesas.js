@@ -12,11 +12,13 @@ function listarTabelaDespesas(array) {
 }
 
 function listarDespesas(despesa) {
-    console.log(despesa.valor.toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2}))
+    let valor = Number(despesa.valor);
+    let valorFormatado = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
-    <td>R$ ${despesa.valor}</td>
+    <td>${valorFormatado}</td>
     <td>${despesa.categoria}</td>
     <td>
     <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
@@ -24,8 +26,7 @@ function listarDespesas(despesa) {
     </td>
     </tr>`;
 }
-// toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2})
-// variavelnumerica.toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2})
+
 function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
     document.querySelector('.confir-excluir-home').classList.remove('none');
 
