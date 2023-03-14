@@ -109,13 +109,12 @@ function chamaEditar(id, nomeCategoria) {
 function editarCategoria(id) {
     criarCategorias.map((categoria) => {
         if (categoria.id == id) {
-            // categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
             if (inputCriarCategoria.value.trim() == '') {
                 exibirMensagens(false, 'Adicione um nome válido!');
             } else {
                 categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
                 exibirMensagens(true, 'Categoria editada com sucesso!');
-                setInterval(function () {
+                setTimeout(function () {
                     chamaCategorias();
                 }, 2000);
             }
@@ -124,10 +123,4 @@ function editarCategoria(id) {
     salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
     limpaForm();
-    // chamaCategorias();
-
-    // exibirMensagens(true, 'Categoria editada com sucesso!');
-    // setInterval(function () {
-    //     chamaCategorias();
-    // }, 2000);
 }
