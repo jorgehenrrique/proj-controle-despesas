@@ -103,7 +103,6 @@ function limpaForm(){ // Limpa todos formularios
     }
 }
 
-
 // --------------------------------------------------------
 
 // Mensagens das telas, adc categoria e adc despesas
