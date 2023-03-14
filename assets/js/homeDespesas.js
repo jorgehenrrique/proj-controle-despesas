@@ -12,6 +12,7 @@ function listarTabelaDespesas(array) {
 }
 
 function listarDespesas(despesa) {
+    console.log(despesa.valor.toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2}))
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
@@ -23,7 +24,8 @@ function listarDespesas(despesa) {
     </td>
     </tr>`;
 }
-
+// toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2})
+// variavelnumerica.toLocaleString('pt-BR',{minimumFractionDigits: 2,maximumFractionDigits: 2})
 function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
     document.querySelector('.confir-excluir-home').classList.remove('none');
 
