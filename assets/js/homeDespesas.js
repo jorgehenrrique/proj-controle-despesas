@@ -13,12 +13,12 @@ function listarTabelaDespesas(array) {
 
 function listarDespesas(despesa) {
     let valor = Number(despesa.valor);
-    let valorFormatado = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    valor = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
-    <td>${valorFormatado}</td>
+    <td>${valor}</td>
     <td>${despesa.categoria}</td>
     <td>
     <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
@@ -101,7 +101,7 @@ function cards() {
             atrasadas++;
         }
     });
-    cardTotalPago.innerText = `R$ ${pagoTotal.toFixed(2)}`
-    cardTotalPagar.innerText = `R$ ${pagarTotal.toFixed(2)}`
+    cardTotalPago.innerText = pagoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    cardTotalPagar.innerText = pagarTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     cardAtrasadas.innerHTML = `${atrasadas}`
 }
