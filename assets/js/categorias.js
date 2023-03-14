@@ -11,7 +11,7 @@ inputCategoriasFiltrar.addEventListener('search', () => { // Quando clica no (x)
 inputCategoriasFiltrar.addEventListener('keyup', () => {
     consultaCategoriasCriadas()
 
-    if (consultaCategoriasCriadas().length === 0) { // se a nova lista nao tem valores, exibe mensagem
+    if (consultaCategoriasCriadas().length === 0) { // Se a nova lista nao tem valores, exibe mensagem
         tabelaCategoriasFiltrados.innerHTML = `<tr>
             <td colspan="3">Nenhuma categoria encontrada</td>
         </tr>`;
@@ -23,8 +23,7 @@ function consultaCategoriasCriadas() {
     let entrada = inputCategoriasFiltrar.value.trim().toUpperCase();
 
     let criarCategoriasFiltrada = criarCategorias.filter((categoria) => {
-        return categoria.categoria.includes(entrada) ||
-            categoria.id === Number(entrada);
+        return categoria.categoria.includes(entrada) || categoria.id === Number(entrada);
     });
 
     listarTabelaCategorias(criarCategoriasFiltrada)
@@ -90,7 +89,7 @@ setInterval(function () { // Limpar mensagem acima
     // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
 
-    // Chama arquivo local e converte para array JS
+    // Chama arquivo local e converte para array JS || Otimizado
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
     for (let cat of categoriasRestauradas) {
