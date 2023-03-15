@@ -7,7 +7,7 @@ function cadastrarCategoria() { //-->>
 
     if (inputCategoria !== '') {
         if (criarCategorias.length <= 0) {
-            salvaCategoria(inputCategoria);
+            salvaCategoria(inputCategoria, geraID());
             exibirMensagens(true, 'Categoria adicionada com sucesso!');
         } else {
             verificaCategoria(inputCategoria);
@@ -30,21 +30,26 @@ function verificaCategoria(inputCategoria) {
         }
     });
     if (checador === 0) {
-        salvaCategoria(inputCategoria);
+        salvaCategoria(inputCategoria, geraID());
         exibirMensagens(true, 'Categoria adicionada com sucesso!');
     }
 }
 
 
-let identificador = 100;
-function salvaCategoria(entradaCategoria, id = null) {
+const geraID = () => { // Gera id unico
+    return Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+};
+
+
+// let identificador = 100;
+function salvaCategoria(entradaCategoria, idgerado) {
     const categoria = {
         categoria: entradaCategoria,
-        id: identificador
+        id: idgerado
     };
 
     criarCategorias.push(categoria);
-    identificador++;
+    // identificador++;
     salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
 }

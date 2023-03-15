@@ -25,7 +25,7 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
     } else {
         let dataFormatada = checaData(Vencimento);
         let status = false;
-        adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
+        adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, geraID(), status);
         exibirMensagens(true, 'Despesa adicionada com sucesso!');
         limpaForm();
 
@@ -68,18 +68,19 @@ function checaData(dataVencimento) {
     // }
 }
 
-let codigo = 0;
-function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, status) { // Cria um objeto despesa, e salva no array
+// let codigo = 0;
+function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, geradoid, status) { // Cria um objeto despesa, e salva no array
     const despesa = {
         categoria: categoria,
         data: vencimento,
         despesa: nomeDespesa,
         valor: valor,
-        id: codigo,
+        id: geradoid,
         status: status
     };
+    console.log("🚀 ~ file: adcDespesa.js:81 ~ adicionaDespesa ~ despesa:", despesa.id)
 
-    codigo++;
+    // codigo++;
     criaDespesas.push(despesa); // Adc obj no array
     salvarDespesasLocal(); // salva local
     listarTabelaDespesas(criaDespesas);
@@ -96,7 +97,7 @@ function salvarDespesasLocal() { // Salva lista despesas local em JSON
     const despesasRestauradas = JSON.parse(localStorage.getItem('despesas'));
 
     for (let des of despesasRestauradas) {
-        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor, des.status);
+        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor, des.id, des.status);
     }
 })()
 

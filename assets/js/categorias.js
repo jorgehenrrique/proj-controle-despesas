@@ -161,7 +161,7 @@ function restauraCategorias() { // Restaura lista local em JSON e converte para 
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
     for (let cat of categoriasRestauradas) {
-        salvaCategoria(cat.categoria);
+        salvaCategoria(cat.categoria, cat.id);
     }
 }
 restauraCategorias();
