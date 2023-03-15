@@ -68,20 +68,20 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
     btnSimExcluir.addEventListener('click', () => {
         criarCategorias.filter((categoria, indice) => {
             if (categoria.id == id) {
-                console.log('entrou 01') //
+                console.log('entrou 01') // <<<
                 let existe = true
 
                 criaDespesas.forEach((despesa) => {
-                    console.log('entrou 02', despesa.categoria) //
+                    console.log('entrou 02', despesa.categoria) // <<<
                     if (categoria.categoria == despesa.categoria) {
-                        console.log('entrou 03') //
-                        console.log(despesa.categoria, 'existe')
-                        
+                        console.log('entrou 03') // <<<
+                        console.log(despesa.categoria, 'existe em uso') // <<<
+
                         excluirConfirmado.classList.add('excluir-negado');
                         excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
                         excluirConfirmado.classList.remove('none');
                         existe = false;
-                    } 
+                    }
                     // else {
                     //     console.log(categoria.categoria, 'Nao existe')
                     //     criarCategorias.splice(indice, 1);
@@ -91,12 +91,13 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
                     // }
                 })
                 if (existe) {
-                    console.log(categoria.categoria, 'Nao existe')
+                    console.log(categoria.categoria, 'Nao em uso') // <<<
                     criarCategorias.splice(indice, 1);
-
+                    
                     excluirConfirmado.classList.remove('excluir-negado');
                     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
                     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                    existe = false;
                 }
                 // for (let cat of criaDespesas) {
                 //     console.log('entrou 02') //
@@ -143,17 +144,27 @@ setInterval(function () { // Limpar mensagem acima
 }, 5000);
 
 
-(() => { // Restaura lista local em JSON e converte para JS
-    // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
-    // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
+// (() => { // Restaura lista local em JSON e converte para JS
+//     // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
+//     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
 
+//     // Chama arquivo local e converte para array JS || Otimizado
+//     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
+
+//     for (let cat of categoriasRestauradas) {
+//         salvaCategoria(cat.categoria);
+//     }
+// })()
+
+function restauraCategorias() { // Restaura lista local em JSON e converte para JS
     // Chama arquivo local e converte para array JS || Otimizado
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
     for (let cat of categoriasRestauradas) {
         salvaCategoria(cat.categoria);
     }
-})()
+}
+restauraCategorias();
 
 // || Editar categoria
 function chamaEditar(id, nomeCategoria) {

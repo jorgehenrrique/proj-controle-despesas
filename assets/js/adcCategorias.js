@@ -45,7 +45,7 @@ function salvaCategoria(entradaCategoria, id = null) {
 
     criarCategorias.push(categoria);
     identificador++;
-    salvarCategoriasLocal()
+    salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
 }
 
