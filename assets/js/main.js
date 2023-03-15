@@ -38,6 +38,7 @@ function chamaHome(){
 }
 function limpaHome(){
     telaHome.classList.add('none');
+    document.querySelector('.confir-excluir-home').classList.add('none'); // Limpa comfirmacao de excluir ao sair da pagina
 }
 
 // despesa
@@ -65,6 +66,7 @@ function chamaCategorias(){
 }
 function limpaCategorias(){
     telaCategorias.classList.add('none');
+    confirmarExcluir.classList.add('none'); // Limpa comfirmacao de excluir ao sair da pagina
 }
 
 // editar
