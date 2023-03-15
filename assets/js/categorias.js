@@ -144,27 +144,27 @@ setInterval(function () { // Limpar mensagem acima
 }, 5000);
 
 
-// (() => { // Restaura lista local em JSON e converte para JS
-//     // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
-//     // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
+(() => { // Restaura lista local em JSON e converte para JS
+    // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
+    // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
 
-//     // Chama arquivo local e converte para array JS || Otimizado
-//     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
-
-//     for (let cat of categoriasRestauradas) {
-//         salvaCategoria(cat.categoria);
-//     }
-// })()
-
-function restauraCategorias() { // Restaura lista local em JSON e converte para JS
     // Chama arquivo local e converte para array JS || Otimizado
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
     for (let cat of categoriasRestauradas) {
         salvaCategoria(cat.categoria, cat.id);
     }
-}
-restauraCategorias();
+})()
+
+// function restauraCategorias() { // Restaura lista local em JSON e converte para JS
+//     // Chama arquivo local e converte para array JS || Otimizado
+//     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
+
+//     for (let cat of categoriasRestauradas) {
+//         salvaCategoria(cat.categoria, cat.id);
+//     }
+// }
+// restauraCategorias();
 
 // || Editar categoria
 function chamaEditar(id, nomeCategoria) {

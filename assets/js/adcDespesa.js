@@ -78,7 +78,7 @@ function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, geradoid, st
         id: geradoid,
         status: status
     };
-    console.log("🚀 ~ file: adcDespesa.js:81 ~ adicionaDespesa ~ despesa:", despesa.id)
+    console.log("🚀 ~ file: adcDespesa.js:81 ~ adicionaDespesa ~ despesa:", despesa.id) // <<<<<
 
     // codigo++;
     criaDespesas.push(despesa); // Adc obj no array
