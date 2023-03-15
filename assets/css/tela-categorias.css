@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-.confir-excluir, .excluir-confirmado{
+.confir-excluir, .excluir-confirmado, .excluir-negado{
     width: 90%;
     background-color: #e490367b;
     color: #a20404;
@@ -41,4 +41,10 @@
 .excluir-confirmado{
     background-color: #70ef797b;
     color: inherit;
+    justify-content: center;
+}
+.excluir-negado{
+    background-color: #ef7085;
+    text-align: center;
+    justify-content: center;
 }

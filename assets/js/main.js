@@ -4,9 +4,6 @@ const telaDespesa = document.querySelector('.container-despesa');
 const telaCategorias = document.querySelector('.container-categorias');
 const telaEditar = document.querySelector('.container-editar');
 
-// || Mensagens
-const confirmarExcluir = document.querySelector('.confir-excluir');
-
 // || Botoes
 const btnHome = document.querySelector('.despesas');
 const btnAdcDespesa = document.querySelector('.btn-adicionar-despesa');

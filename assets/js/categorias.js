@@ -1,5 +1,11 @@
 const tabelaCategoriasFiltrados = document.querySelector('#tabela-categorias-filtrados');
 
+// || Mensagens
+const confirmarExcluir = document.querySelector('.confir-excluir');
+const excluirConfirmado = document.querySelector('.excluir-confirmado');
+const btnSimExcluir = document.querySelector('.simExcluir');
+const btnNaoExcluir = document.querySelector('.naoExcluir');
+
 inputCategoriasFiltrar.addEventListener('search', () => { // Quando clica no (x) do search
     if (!inputCategoriasFiltrar.value.length) {
         inputCategoriasFiltrar.value = '';
@@ -59,19 +65,71 @@ function listarCategorias(item) {
 function confirmaExcluir(id) { // Confirmar excluir em Categorias
     confirmarExcluir.classList.remove('none');
 
-    document.querySelector('.simExcluir').addEventListener('click', () => {
+    btnSimExcluir.addEventListener('click', () => {
         criarCategorias.filter((categoria, indice) => {
             if (categoria.id == id) {
-                criarCategorias.splice(indice, 1);
+                console.log('entrou 01') //
+                let existe = true
 
-                document.querySelector('.excluir-confirmado').classList.remove('none'); // Mensagem de excluído
+                criaDespesas.forEach((despesa) => {
+                    console.log('entrou 02', despesa.categoria) //
+                    if (categoria.categoria == despesa.categoria) {
+                        console.log('entrou 03') //
+                        console.log(despesa.categoria, 'existe')
+                        
+                        excluirConfirmado.classList.add('excluir-negado');
+                        excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
+                        excluirConfirmado.classList.remove('none');
+                        existe = false;
+                    } 
+                    // else {
+                    //     console.log(categoria.categoria, 'Nao existe')
+                    //     criarCategorias.splice(indice, 1);
+
+                    //     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                    //     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                    // }
+                })
+                if (existe) {
+                    console.log(categoria.categoria, 'Nao existe')
+                    criarCategorias.splice(indice, 1);
+
+                    excluirConfirmado.classList.remove('excluir-negado');
+                    excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                    excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                }
+                // for (let cat of criaDespesas) {
+                //     console.log('entrou 02') //
+
+                //     if (categoria.categoria == cat.categoria) {
+                //         console.log('entrou 03') //
+
+                //         console.log(cat.categoria, 'existe')
+                //         excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
+                //         excluirConfirmado.classList.remove('none');
+                //         // break;
+                //     } else {
+                //         console.log(categoria.categoria, 'Nao existe')
+                //         criarCategorias.splice(indice, 1);
+
+                //         excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                //         excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                //     }
+                // }
+
+                // console.log(categoria.categoria, 'Nao existe')
+                // criarCategorias.splice(indice, 1);
+
+                // excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                // excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+
             }
         });
         confirmarExcluir.classList.add('none');
         listarTabelaCategorias(criarCategorias);
         salvarCategoriasLocal() // Atualiza lista local
     });
-    document.querySelector('.naoExcluir').addEventListener('click', () => {
+    btnNaoExcluir.addEventListener('click', () => {
         confirmarExcluir.classList.add('none');
     });
 }
@@ -82,7 +140,7 @@ function limpaMensagemDeletar() {
 }
 setInterval(function () { // Limpar mensagem acima
     limpaMensagemDeletar();
-}, 3000);
+}, 5000);
 
 
 (() => { // Restaura lista local em JSON e converte para JS
