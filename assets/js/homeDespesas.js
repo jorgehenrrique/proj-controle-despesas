@@ -105,3 +105,31 @@ function cards() {
     cardTotalPagar.innerText = pagarTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     cardAtrasadas.innerHTML = `${atrasadas}`
 }
+
+
+// || Data
+// function checaData(dataVencimento) {
+//     // Obter a data atual
+//     let dataAtual = new Date();
+//     let diaAtual = dataAtual.getDate();
+//     let mesAtual = dataAtual.getMonth() + 1;
+//     let anoAtual = dataAtual.getFullYear();
+
+//     let dataDeEntrada = dataVencimento;
+
+//     // Converte data de entrada para um obj de data
+//     let dataObj = new Date(dataDeEntrada);
+
+//     // Obter dia, mes e ano da data de entrada
+//     let diaEntrada = dataObj.getDate();
+//     let mesEntrada = dataObj.getMonth() + 1;
+//     let anoEntrada = dataObj.getFullYear();
+
+//     // return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
+//     // Comparar as datas || Não utilizado mais, aceita qualquer data
+//     if (anoEntrada < anoAtual || (anoEntrada === anoAtual && mesEntrada < mesAtual) || (anoEntrada === anoAtual && mesEntrada === mesAtual && diaEntrada < diaAtual)) {
+//         return false;
+//     } else {
+//         return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
+//     }
+// }

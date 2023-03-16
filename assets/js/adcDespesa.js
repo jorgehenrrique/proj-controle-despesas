@@ -23,14 +23,14 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         if (Vencimento === '') exibirMensagens(false, 'Selecione uma data de vencimento.');
         if (Categoria === '') exibirMensagens(false, `Selecione uma categoria ou crie: <button onclick="chamaCategorias()">Categorias</button>`);
     } else {
-        let dataFormatada = checaData(Vencimento);
+        let dataFormatada = formataData(Vencimento);
         let status = false;
         adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
         exibirMensagens(true, 'Despesa adicionada com sucesso!');
         limpaForm();
 
-        // if (checaData(Vencimento)) {
-        //     let dataFormatada = checaData(Vencimento);
+        // if (formataData(Vencimento)) {
+        //     let dataFormatada = formataData(Vencimento);
         //     let status = false;
         //     adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
         //     exibirMensagens(true, 'Despesa adicionada com sucesso!');
@@ -42,7 +42,7 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
 }
 
 
-function checaData(dataVencimento) {
+function formataData(dataVencimento) {
     // Obter a data atual
     // let dataAtual = new Date();
     // let diaAtual = dataAtual.getDate();

@@ -37,20 +37,6 @@ function verificaCategoria(inputCategoria) {
     if (checador === 0) return false;
     return true;
 }
-// function verificaCategoria(inputCategoria) {
-//     let checador = 0;
-
-//     criarCategorias.forEach((categoria) => {
-//         if (inputCategoria === categoria.categoria) {
-//             exibirMensagens(false, 'Categoria já existe!');
-//             checador++;
-//         }
-//     });
-//     if (checador === 0) {
-//         salvaCategoria(inputCategoria, geraID());
-//         exibirMensagens(true, 'Categoria adicionada com sucesso!');
-//     }
-// }
 
 
 const geraID = () => { // Gera id unico
