@@ -88,7 +88,7 @@ function consultaDespesasCriadas() {
     return criarDespesasFiltradas;
 }
 
-// || Cards total paga, total a pagar e atrasadas
+// || Cards total pago, total a pagar e atrasadas
 function cards() {
     let pagoTotal = 0;
     let pagarTotal = 0;

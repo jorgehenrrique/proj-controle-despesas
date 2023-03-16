@@ -44,7 +44,6 @@ function formataData(dataVencimento) {
     let anoEntrada = dataObj.getFullYear();
 
     return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
-    // if (anoEntrada < anoAtual || (anoEntrada === anoAtual && mesEntrada < mesAtual) || (anoEntrada === anoAtual && mesEntrada === mesAtual && diaEntrada < diaAtual)) {
 }
 
 let codigo = 0;
