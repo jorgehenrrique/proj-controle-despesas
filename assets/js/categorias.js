@@ -29,7 +29,7 @@ function consultaCategoriasCriadas() {
     let entrada = inputCategoriasFiltrar.value.trim().toUpperCase();
 
     let criarCategoriasFiltrada = criarCategorias.filter((categoria) => {
-        return categoria.categoria.includes(entrada) || categoria.id === Number(entrada);
+        return categoria.categoria.includes(entrada) || categoria.id.includes(entrada);
     });
 
     listarTabelaCategorias(criarCategoriasFiltrada)
@@ -93,7 +93,7 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
                 if (existe) {
                     console.log(categoria.categoria, 'Nao em uso') // <<<
                     criarCategorias.splice(indice, 1);
-                    
+
                     excluirConfirmado.classList.remove('excluir-negado');
                     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
                     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
@@ -134,6 +134,19 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
         confirmarExcluir.classList.add('none');
     });
 }
+
+
+// let obj1 = categoria.categoria;
+// for (let i of criarCategorias) {
+//     let obj2 = criaDespesas.find((despesa) => despesa.categoria === obj1);
+//     if (obj2) {
+//         console.log(`O objeto ${JSON.stringify(obj1)} existe em ambos os arrays.`);
+//     } else {
+//         console.log(`O objeto ${JSON.stringify(obj1)} NAO existe em ambos os arrays.`);
+//     }
+// }
+
+
 
 function limpaMensagemDeletar() {
     excluirConfirmado.classList.add('none');
