@@ -97,8 +97,7 @@ function cards() {
     criaDespesas.filter((pago) => {
         if (pago.status) pagoTotal += Number(pago.valor);
         if (!pago.status) pagarTotal += Number(pago.valor);
-        
-        atrasadas = checaDataVencida(pago.data, atrasadas);
+        if (!pago.status) atrasadas = checaDataVencida(pago.data, atrasadas);
     });
     cardTotalPago.innerText = pagoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     cardTotalPagar.innerText = pagarTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });

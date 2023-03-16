@@ -28,44 +28,23 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
         exibirMensagens(true, 'Despesa adicionada com sucesso!');
         limpaForm();
-
-        // if (formataData(Vencimento)) {
-        //     let dataFormatada = formataData(Vencimento);
-        //     let status = false;
-        //     adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
-        //     exibirMensagens(true, 'Despesa adicionada com sucesso!');
-        //     limpaForm();
-        // } else {
-        //     exibirMensagens(false, 'Data de vencimento deve ser posterior ao dia atual!');
-        // }
     }
 }
 
 
 function formataData(dataVencimento) {
-    // Obter a data atual
-    // let dataAtual = new Date();
-    // let diaAtual = dataAtual.getDate();
-    // let mesAtual = dataAtual.getMonth() + 1;
-    // let anoAtual = dataAtual.getFullYear();
-
     let dataDeEntrada = dataVencimento;
 
     // Converte data de entrada para um obj de data
     let dataObj = new Date(dataDeEntrada);
 
     // Obter dia, mes e ano da data de entrada
-    let diaEntrada = dataObj.getDate();
+    let diaEntrada = dataObj.getDate() + 1;
     let mesEntrada = dataObj.getMonth() + 1;
     let anoEntrada = dataObj.getFullYear();
 
     return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
-    // Comparar as datas || Não utilizado mais, aceita qualquer data
     // if (anoEntrada < anoAtual || (anoEntrada === anoAtual && mesEntrada < mesAtual) || (anoEntrada === anoAtual && mesEntrada === mesAtual && diaEntrada < diaAtual)) {
-    //     return false;
-    // } else {
-    //     return `${(diaEntrada >= 10) ? diaEntrada : `0${diaEntrada}`}/${(mesEntrada >= 10) ? mesEntrada : `0${mesEntrada}`}/${anoEntrada}`;
-    // }
 }
 
 let codigo = 0;
