@@ -62,91 +62,75 @@ function listarCategorias(item) {
     `;
 }
 
+
 function confirmaExcluir(id) { // Confirmar excluir em Categorias
     confirmarExcluir.classList.remove('none');
 
-    btnSimExcluir.addEventListener('click', () => {
-        criarCategorias.filter((categoria, indice) => {
-            if (categoria.id == id) {
-                console.log('entrou 01') // <<<
-                let existe = true
+    btnSimExcluir.setAttribute('onclick', `onclickSExcluir(${id})`); // Chama onclick sim ecluir
 
-                criaDespesas.forEach((despesa) => {
-                    console.log('entrou 02', despesa.categoria) // <<<
-                    if (categoria.categoria == despesa.categoria) {
-                        console.log('entrou 03') // <<<
-                        console.log(despesa.categoria, 'existe em uso') // <<<
 
-                        excluirConfirmado.classList.add('excluir-negado');
-                        excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
-                        excluirConfirmado.classList.remove('none');
-                        existe = false;
-                    }
-                    // else {
-                    //     console.log(categoria.categoria, 'Nao existe')
-                    //     criarCategorias.splice(indice, 1);
+    // const array = ['a', 'b', 'c', 'd'];
+    // const elemento = 'c';
+    // const index = array.indexOf(elemento);
 
-                    //     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
-                    //     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
-                    // }
-                })
-                if (existe) {
-                    console.log(categoria.categoria, 'Nao em uso') // <<<
-                    criarCategorias.splice(indice, 1);
+    // if (index !== -1) {
+    //     array.splice(index, 1);
+    // }
 
-                    excluirConfirmado.classList.remove('excluir-negado');
-                    excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
-                    excluirConfirmado.classList.remove('none'); // Mensagem de excluído
-                    existe = false;
-                }
-                // for (let cat of criaDespesas) {
-                //     console.log('entrou 02') //
+    // console.log(array); // Saída: ['a', 'b', 'd']
 
-                //     if (categoria.categoria == cat.categoria) {
-                //         console.log('entrou 03') //
 
-                //         console.log(cat.categoria, 'existe')
-                //         excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
-                //         excluirConfirmado.classList.remove('none');
-                //         // break;
-                //     } else {
-                //         console.log(categoria.categoria, 'Nao existe')
-                //         criarCategorias.splice(indice, 1);
-
-                //         excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
-                //         excluirConfirmado.classList.remove('none'); // Mensagem de excluído
-                //     }
-                // }
-
-                // console.log(categoria.categoria, 'Nao existe')
-                // criarCategorias.splice(indice, 1);
-
-                // excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
-                // excluirConfirmado.classList.remove('none'); // Mensagem de excluído
-
-            }
-        });
-        confirmarExcluir.classList.add('none');
-        listarTabelaCategorias(criarCategorias);
-        salvarCategoriasLocal() // Atualiza lista local
-    });
-    btnNaoExcluir.addEventListener('click', () => {
-        confirmarExcluir.classList.add('none');
-    });
+    btnNaoExcluir.setAttribute('onclick', 'onclickNExcluir()')
 }
 
+function onclickSExcluir(id) {
+    criarCategorias.filter((categoria, indice) => {
+        if (categoria.id == id) {
+            console.log('entrou 01') // <<<
+            let existe = true
 
-// let obj1 = categoria.categoria;
-// for (let i of criarCategorias) {
-//     let obj2 = criaDespesas.find((despesa) => despesa.categoria === obj1);
-//     if (obj2) {
-//         console.log(`O objeto ${JSON.stringify(obj1)} existe em ambos os arrays.`);
-//     } else {
-//         console.log(`O objeto ${JSON.stringify(obj1)} NAO existe em ambos os arrays.`);
-//     }
-// }
+            criaDespesas.forEach((despesa) => {
+                console.log('entrou 02', despesa.categoria) // <<<
 
+                if (categoria.categoria == despesa.categoria) {
+                    console.log('entrou 03') // <<<
+                    console.log(despesa.categoria, 'existe em uso') // <<<
 
+                    excluirConfirmado.classList.add('excluir-negado');
+                    excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
+                    excluirConfirmado.classList.remove('none');
+                    existe = false;
+                }
+                // else {
+                //     console.log(categoria.categoria, 'Nao existe')
+                //     criarCategorias.splice(indice, 1);
+
+                //     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                //     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                // }
+            })
+            if (existe) {
+                console.log(categoria.categoria, 'Nao em uso') // <<<
+
+                criarCategorias.splice(indice, 1);
+                console.log("🚀 ~ file: categorias.js:116:", indice)
+
+                excluirConfirmado.classList.remove('excluir-negado');
+                excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
+                excluirConfirmado.classList.remove('none'); // Mensagem de excluído
+                existe = false;
+            }
+
+        }
+    });
+    confirmarExcluir.classList.add('none');
+    listarTabelaCategorias(criarCategorias);
+    salvarCategoriasLocal() // Atualiza lista local
+}
+
+function onclickNExcluir() {
+    confirmarExcluir.classList.add('none');
+}
 
 function limpaMensagemDeletar() {
     excluirConfirmado.classList.add('none');

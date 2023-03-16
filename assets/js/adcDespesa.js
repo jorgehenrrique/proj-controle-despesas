@@ -78,7 +78,6 @@ function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, status) { //
         id: codigo,
         status: status
     };
-    console.log("🚀 ~ file: adcDespesa.js:81 ~ adicionaDespesa ~ despesa:", despesa.id) // <<<<<
 
     codigo++;
     criaDespesas.push(despesa); // Adc obj no array
