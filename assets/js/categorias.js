@@ -74,15 +74,15 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
 function onclickSExcluir(id) {
     criarCategorias.filter((categoria, indice) => {
         if (categoria.id == id) {
-            console.log('entrou 01') // <<<
+            // console.log('entrou 01') // <<<
             let existe = true
 
             criaDespesas.forEach((despesa) => {
-                console.log('entrou 02', despesa.categoria) // <<<
+                // console.log('entrou 02', despesa.categoria) // <<<
 
                 if (categoria.categoria == despesa.categoria) {
-                    console.log('entrou 03') // <<<
-                    console.log(despesa.categoria, 'existe em uso') // <<<
+                    // console.log('entrou 03') // <<<
+                    // console.log(despesa.categoria, 'existe em uso') // <<<
 
                     excluirConfirmado.classList.add('excluir-negado');
                     excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
@@ -91,7 +91,7 @@ function onclickSExcluir(id) {
                 }
             })
             if (existe) {
-                console.log(categoria.categoria, 'Nao em uso') // <<<
+                // console.log(categoria.categoria, 'Nao em uso') // <<<
 
                 criarCategorias.splice(indice, 1);
 
