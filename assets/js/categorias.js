@@ -68,18 +68,6 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
 
     btnSimExcluir.setAttribute('onclick', `onclickSExcluir(${id})`); // Chama onclick sim ecluir
 
-
-    // const array = ['a', 'b', 'c', 'd'];
-    // const elemento = 'c';
-    // const index = array.indexOf(elemento);
-
-    // if (index !== -1) {
-    //     array.splice(index, 1);
-    // }
-
-    // console.log(array); // Saída: ['a', 'b', 'd']
-
-
     btnNaoExcluir.setAttribute('onclick', 'onclickNExcluir()')
 }
 
@@ -101,26 +89,17 @@ function onclickSExcluir(id) {
                     excluirConfirmado.classList.remove('none');
                     existe = false;
                 }
-                // else {
-                //     console.log(categoria.categoria, 'Nao existe')
-                //     criarCategorias.splice(indice, 1);
-
-                //     excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
-                //     excluirConfirmado.classList.remove('none'); // Mensagem de excluído
-                // }
             })
             if (existe) {
                 console.log(categoria.categoria, 'Nao em uso') // <<<
 
                 criarCategorias.splice(indice, 1);
-                console.log("🚀 ~ file: categorias.js:116:", indice)
 
                 excluirConfirmado.classList.remove('excluir-negado');
                 excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
                 excluirConfirmado.classList.remove('none'); // Mensagem de excluído
                 existe = false;
             }
-
         }
     });
     confirmarExcluir.classList.add('none');
@@ -153,15 +132,6 @@ setInterval(function () { // Limpar mensagem acima
     }
 })()
 
-// function restauraCategorias() { // Restaura lista local em JSON e converte para JS
-//     // Chama arquivo local e converte para array JS || Otimizado
-//     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
-
-//     for (let cat of categoriasRestauradas) {
-//         salvaCategoria(cat.categoria, cat.id);
-//     }
-// }
-// restauraCategorias();
 
 // || Editar categoria
 function chamaEditar(id, nomeCategoria) {
@@ -174,7 +144,7 @@ function chamaEditar(id, nomeCategoria) {
 function editarCategoria(id) {
     criarCategorias.map((categoria) => {
         if (categoria.id == id) {
-            if (inputCriarCategoria.value.trim() == '') {
+            if (inputCriarCategoria.value.trim() == '' || verificaCategoria(inputCriarCategoria.value)) {
                 exibirMensagens(false, 'Adicione um nome válido!');
             } else {
                 categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');

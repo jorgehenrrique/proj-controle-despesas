@@ -10,7 +10,12 @@ function cadastrarCategoria() { //-->>
             salvaCategoria(inputCategoria, geraID());
             exibirMensagens(true, 'Categoria adicionada com sucesso!');
         } else {
-            verificaCategoria(inputCategoria);
+            if (verificaCategoria(inputCategoria)) {
+                exibirMensagens(false, 'Categoria já existe!');
+            } else {
+                salvaCategoria(inputCategoria, geraID());
+                exibirMensagens(true, 'Categoria adicionada com sucesso!');
+            }
         }
     } else {
         exibirMensagens(false, 'Informe um valor válido!');
@@ -25,15 +30,27 @@ function verificaCategoria(inputCategoria) {
 
     criarCategorias.forEach((categoria) => {
         if (inputCategoria === categoria.categoria) {
-            exibirMensagens(false, 'Categoria já existe!');
-            checador++;
+            console.log('entra em false')
+            checador++
         }
     });
-    if (checador === 0) {
-        salvaCategoria(inputCategoria, geraID());
-        exibirMensagens(true, 'Categoria adicionada com sucesso!');
-    }
+    if (checador === 0) return false;
+    return true;
 }
+// function verificaCategoria(inputCategoria) {
+//     let checador = 0;
+
+//     criarCategorias.forEach((categoria) => {
+//         if (inputCategoria === categoria.categoria) {
+//             exibirMensagens(false, 'Categoria já existe!');
+//             checador++;
+//         }
+//     });
+//     if (checador === 0) {
+//         salvaCategoria(inputCategoria, geraID());
+//         exibirMensagens(true, 'Categoria adicionada com sucesso!');
+//     }
+// }
 
 
 const geraID = () => { // Gera id unico
