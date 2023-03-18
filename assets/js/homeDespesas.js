@@ -12,8 +12,7 @@ function listarTabelaDespesas(array) {
 }
 
 function listarDespesas(despesa) {
-    let valor = Number(despesa.valor);
-    valor = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    let valor = formataValor(despesa.valor);
 
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
@@ -99,11 +98,16 @@ function cards() {
         if (!pago.status) pagarTotal += Number(pago.valor);
         if (!pago.status) atrasadas = checaDataVencida(pago.data, atrasadas);
     });
-    cardTotalPago.innerText = pagoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    cardTotalPagar.innerText = pagarTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    cardTotalPago.innerText = formataValor(pagoTotal);
+    cardTotalPagar.innerText = formataValor(pagarTotal);
     cardAtrasadas.innerHTML = `${atrasadas}`
 }
 
+function formataValor(valor) {
+    let valorN = Number(valor);
+    valorN = valorN.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    return valorN;
+}
 
 // || Checa data vencida
 function checaDataVencida(dataVencimento, atrasadas) { // dd/mm/aaaa
