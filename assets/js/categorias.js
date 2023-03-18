@@ -147,8 +147,15 @@ function editarCategoria(id) {
             if (inputCriarCategoria.value.trim() == '' || verificaCategoria(inputCriarCategoria.value)) {
                 exibirMensagens(false, 'Adicione um nome válido!');
             } else {
+                let categoriaAntiga = categoria.categoria;
                 categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
+                let categoriaNova = categoria.categoria;
                 exibirMensagens(true, 'Categoria editada com sucesso!');
+
+
+                // console.log('teste01', categoriaAntiga) // <<<<<<<<
+                // console.log('teste02', categoriaNova) // <<<<<<<<
+                atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova);
                 setTimeout(function () {
                     chamaCategorias();
                 }, 1500);
@@ -158,4 +165,16 @@ function editarCategoria(id) {
     salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
     limpaForm();
+}
+
+// || Atualiza categoria editada nas despesas
+function atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova) {
+    criaDespesas.filter((despesa) => {
+        if (despesa.categoria == categoriaAntiga) {
+            // console.log(despesa.categoria, despesa.id)
+            return despesa.categoria = categoriaNova;
+        }
+    });
+    listarTabelaDespesas(criaDespesas);
+    salvarDespesasLocal() // Atualiza lista local
 }

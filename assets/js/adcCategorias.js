@@ -30,7 +30,6 @@ function verificaCategoria(inputCategoria) {
 
     criarCategorias.forEach((categoria) => {
         if (inputCategoria === categoria.categoria) {
-            console.log('entra em false')
             checador++
         }
     });
