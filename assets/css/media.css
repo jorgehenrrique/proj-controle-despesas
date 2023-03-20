@@ -5,6 +5,11 @@
         font-size: calc(1rem + 1vw);
     }
     /* || Tela Home */
+    .tittle{
+        flex-grow: 1;
+        margin: 0;
+        font-size: calc(1rem + 1vw);
+    }
     .filtro{
         width: 100%;
         flex-direction: column;
@@ -31,5 +36,10 @@
         flex-direction: column;
         width: 100%;
         padding: 2rem 4rem;
+    }
+}
+@media screen and (max-width:  490px){ 
+    .tittle{
+        display: none;
     }
 }
