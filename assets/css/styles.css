@@ -137,8 +137,7 @@ tr:nth-child(2n){
 /* || Mensagem de excluir tela home */
 .confir-excluir-home, .excluir-confirmado-home{
     width: 90%;
-    background-color: #e490367b;
-    color: #a20404;
+    background-image: linear-gradient(80deg, #70ef797b, #ea4c66);
     font-weight: bold;
     font-size: 2rem;
     border-radius: var(--border-radius-8px);
@@ -150,7 +149,7 @@ tr:nth-child(2n){
     gap: 1rem;
 }
 .excluir-confirmado-home{
-    background-color: #70ef797b;
+    background-image: linear-gradient(80deg, #70ef79ae, #70ef797a);
     color: inherit;
 }
 
