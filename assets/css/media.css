@@ -2,12 +2,10 @@
 
 @media screen and (max-width:  810px){ 
     .container, body, .container-despesa, .container-categorias{
-        font-size: calc(1rem + 1vw);
+        font-size: calc(.5rem + 1vh);
     }
     /* || Tela Home */
     .tittle{
-        flex-grow: 1;
-        margin: 0;
         font-size: calc(1rem + 1vw);
     }
     .filtro{
@@ -32,8 +30,6 @@
 
     /* || Tela adc Despesas */
     form{
-        display: flex;
-        flex-direction: column;
         width: 100%;
         padding: 2rem 4rem;
     }
