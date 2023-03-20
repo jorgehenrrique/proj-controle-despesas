@@ -43,7 +43,6 @@ const geraID = () => { // Gera id unico
 };
 
 
-// let identificador = 100;
 function salvaCategoria(entradaCategoria, idgerado) {
     const categoria = {
         categoria: entradaCategoria,
@@ -51,16 +50,12 @@ function salvaCategoria(entradaCategoria, idgerado) {
     };
 
     criarCategorias.push(categoria);
-    // identificador++;
     salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
 }
 
 
 function salvarCategoriasLocal() { // Salva lista local em JSON
-    // const categoriasJSON  = JSON.stringify(criarCategorias); // converte array JS para JSON
-    // localStorage.setItem('categorias', categoriasJSON); // Salva local, ('nomeArquivo', arquivoJSON)
-
     // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON) || Otimizado
     localStorage.setItem('categorias', JSON.stringify(criarCategorias));
 }
