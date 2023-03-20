@@ -4,6 +4,9 @@
     .container, body, .container-despesa, .container-categorias{
         font-size: calc(.5rem + 1vh);
     }
+    .container{
+        height: fit-content;
+    }
     /* || Tela Home */
     .tittle{
         font-size: calc(1rem + 1vw);

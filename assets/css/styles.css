@@ -47,7 +47,7 @@ header{
 .container{
     background-color: var(--background-container);
     width: 100%;
-    height: fit-content;
+    height: 100%;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
