@@ -35,6 +35,7 @@ function chamaHome(){
     limpaCategorias();
     limpaEditar();
     telaHome.classList.remove('none');
+    alteraBtnVoltar(false);
 }
 function limpaHome(){
     telaHome.classList.add('none');
@@ -63,6 +64,7 @@ function chamaCategorias(){
     limpaEditar();
     limparMensagens();
     telaCategorias.classList.remove('none');
+    alteraBtnVoltar(false);
 }
 function limpaCategorias(){
     telaCategorias.classList.add('none');
