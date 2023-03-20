@@ -28,6 +28,7 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
         exibirMensagens(true, 'Despesa adicionada com sucesso!');
         limpaForm();
+        alteraBtnVoltar(true);
     }
 }
 

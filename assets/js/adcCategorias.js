@@ -61,10 +61,3 @@ function salvarCategoriasLocal() { // Salva lista local em JSON
     localStorage.setItem('categorias', JSON.stringify(criarCategorias));
 }
 
-function alteraBtnVoltar(salvo) { // Altera o btn de cacelar para voltar
-    if (salvo) {
-        btnCancelarEdit.innerText = 'VOLTAR';
-    } else {
-        btnCancelarEdit.innerText = 'CANCELAR';
-    }
-}

@@ -30,21 +30,21 @@ const inputCriarCategoria = document.querySelector('#categoria-criar');
 
 // home
 btnHome.addEventListener('click', chamaHome);
-function chamaHome(){
+function chamaHome() {
     limpaDespesa();
     limpaCategorias();
     limpaEditar();
     telaHome.classList.remove('none');
     alteraBtnVoltar(false);
 }
-function limpaHome(){
+function limpaHome() {
     telaHome.classList.add('none');
     document.querySelector('.confir-excluir-home').classList.add('none'); // Limpa comfirmacao de excluir ao sair da pagina
 }
 
 // despesa
 btnAdcDespesa.addEventListener('click', chamaDespesa);
-function chamaDespesa(){
+function chamaDespesa() {
     limpaHome();
     limpaCategorias();
     limpaEditar();
@@ -52,13 +52,13 @@ function chamaDespesa(){
     telaDespesa.classList.remove('none');
     checaCategoriaExistente();
 }
-function limpaDespesa(){
+function limpaDespesa() {
     telaDespesa.classList.add('none');
 }
 
 // categorias
 btnCategorias.addEventListener('click', chamaCategorias);
-function chamaCategorias(){
+function chamaCategorias() {
     limpaHome();
     limpaDespesa();
     limpaEditar();
@@ -66,21 +66,21 @@ function chamaCategorias(){
     telaCategorias.classList.remove('none');
     alteraBtnVoltar(false);
 }
-function limpaCategorias(){
+function limpaCategorias() {
     telaCategorias.classList.add('none');
     confirmarExcluir.classList.add('none'); // Limpa comfirmacao de excluir ao sair da pagina
 }
 
 // editar
 btnAdcEditar.addEventListener('click', chamaAdcEditar);
-function chamaAdcEditar(){
+function chamaAdcEditar() {
     limpaHome();
     limpaDespesa();
     limpaCategorias();
     telaEditar.classList.remove('none');
     btnSalvarEdit.setAttribute('onclick', `cadastrarCategoria()`); // -->>
 }
-function limpaEditar(){
+function limpaEditar() {
     telaEditar.classList.add('none');
 }
 
@@ -98,8 +98,8 @@ btnCancelarEdit.addEventListener('click', () => {
     limparMensagens();
 });
 
-function limpaForm(){ // Limpa todos formularios
-    for (let form of formularios){
+function limpaForm() { // Limpa todos formularios
+    for (let form of formularios) {
         form.reset();
     }
 }
@@ -131,3 +131,14 @@ function limparMensagens() {
 setInterval(function () {
     limparMensagens();
 }, 10000);
+
+
+function alteraBtnVoltar(salvo) { // Altera o btn de cacelar para voltar
+    if (salvo) {
+        btnCancelarEdit.innerText = 'VOLTAR';
+        btnCancelarDespesa.innerText = 'VOLTAR';
+    } else {
+        btnCancelarEdit.innerText = 'CANCELAR';
+        btnCancelarDespesa.innerText = 'CANCELAR';
+    }
+}
