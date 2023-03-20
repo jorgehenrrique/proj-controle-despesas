@@ -59,13 +59,13 @@ function adicionaDespesa(categoria, vencimento, nomeDespesa, valor, status) { //
 
     codigo++;
     criaDespesas.push(despesa); // Adc obj no array
-    salvarDespesasLocal(); // salva local
+    salvarDespesasLocal(); // Salva local
     listarTabelaDespesas(criaDespesas);
 }
 
 // || Salva local e restaura
 function salvarDespesasLocal() { // Salva lista despesas local em JSON
-    // converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
+    // Converte array JS para JSON e salva local, ('nomeArquivo', arquivoJSON)
     localStorage.setItem('despesas', JSON.stringify(criaDespesas));
 }
 

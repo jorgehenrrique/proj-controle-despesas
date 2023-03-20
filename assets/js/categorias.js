@@ -74,15 +74,10 @@ function confirmaExcluir(id) { // Confirmar excluir em Categorias
 function onclickSExcluir(id) {
     criarCategorias.filter((categoria, indice) => {
         if (categoria.id == id) {
-            // console.log('entrou 01') // <<<
             let existe = true
 
             criaDespesas.forEach((despesa) => {
-                // console.log('entrou 02', despesa.categoria) // <<<
-
                 if (categoria.categoria == despesa.categoria) {
-                    // console.log('entrou 03') // <<<
-                    // console.log(despesa.categoria, 'existe em uso') // <<<
 
                     excluirConfirmado.classList.add('excluir-negado');
                     excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
@@ -91,8 +86,6 @@ function onclickSExcluir(id) {
                 }
             })
             if (existe) {
-                // console.log(categoria.categoria, 'Nao em uso') // <<<
-
                 criarCategorias.splice(indice, 1);
 
                 excluirConfirmado.classList.remove('excluir-negado');
@@ -104,7 +97,7 @@ function onclickSExcluir(id) {
     });
     confirmarExcluir.classList.add('none');
     listarTabelaCategorias(criarCategorias);
-    salvarCategoriasLocal() // Atualiza lista local
+    salvarCategoriasLocal();
 }
 
 function onclickNExcluir() {
@@ -113,7 +106,7 @@ function onclickNExcluir() {
 
 function limpaMensagemDeletar() {
     excluirConfirmado.classList.add('none');
-    document.querySelector('.excluir-confirmado-home').classList.add('none'); // mensagem do home
+    document.querySelector('.excluir-confirmado-home').classList.add('none'); // Mensagem do home
 }
 setInterval(function () { // Limpar mensagem acima
     limpaMensagemDeletar();
@@ -121,9 +114,6 @@ setInterval(function () { // Limpar mensagem acima
 
 
 (() => { // Restaura lista local em JSON e converte para JS
-    // const restauraCategorias = localStorage.getItem('categorias'); // Chama arquivo local
-    // const categoriasRestauradas = JSON.parse(restauraCategorias); // Converte para array JS
-
     // Chama arquivo local e converte para array JS || Otimizado
     const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
 
@@ -152,9 +142,6 @@ function editarCategoria(id) {
                 let categoriaNova = categoria.categoria;
                 exibirMensagens(true, 'Categoria editada com sucesso!');
 
-
-                // console.log('teste01', categoriaAntiga) // <<<<<<<<
-                // console.log('teste02', categoriaNova) // <<<<<<<<
                 atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova);
                 setTimeout(function () {
                     chamaCategorias();
@@ -171,10 +158,9 @@ function editarCategoria(id) {
 function atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova) {
     criaDespesas.filter((despesa) => {
         if (despesa.categoria == categoriaAntiga) {
-            // console.log(despesa.categoria, despesa.id)
-            return despesa.categoria = categoriaNova;
+            despesa.categoria = categoriaNova;
         }
     });
     listarTabelaDespesas(criaDespesas);
-    salvarDespesasLocal() // Atualiza lista local
+    salvarDespesasLocal();
 }
