@@ -84,7 +84,7 @@ function onclickSExcluir(id) {
                     excluirConfirmado.classList.remove('none');
                     existe = false;
                 }
-            })
+            });
             if (existe) {
                 criarCategorias.splice(indice, 1);
 

@@ -48,7 +48,7 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
 function alterarStatus(id) {
     criaDespesas.filter((despesa, indice) => {
         if (despesa.id == id) criaDespesas[indice].status = criaDespesas[indice].status ? false : true;
-    })
+    });
     listarTabelaDespesas(criaDespesas);
     salvarDespesasLocal() // Atualiza lista local
 }
@@ -111,7 +111,7 @@ function formataValor(valor) {
 }
 
 // || Checa data vencida
-function checaDataVencida(dataVencimento, atrasadas) { // dd/mm/aaaa
+function checaDataVencida(dataVencimento, atrasadas) { //dd/mm/aaaa
     const [dia, mes, ano] = dataVencimento.split('/');
     const data = new Date(`${ano}-${mes}-${dia}`);
 
