@@ -123,7 +123,7 @@ section{
 }
 table{
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
 }
 th, td{
     padding: 8px 5px;
