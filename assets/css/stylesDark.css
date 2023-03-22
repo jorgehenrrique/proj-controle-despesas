@@ -2,12 +2,15 @@
 @media (prefers-color-scheme: dark) {
 
     html,
-    a,  button{
+    a,
+    button {
         color: var(--text-color-dark);
     }
-    .tittle{
+
+    .tittle {
         color: var(--btn-color);
     }
+
     header {
         background-color: var(--header-color-dark);
     }
@@ -16,31 +19,38 @@
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
-    #filtrar{
+
+    #filtrar {
         color: var(--text-color-dark);
     }
-    .container-despesa input{
+
+    .container-despesa input {
         color: var(--text-color-dark);
     }
-    .container-despesa{
+
+    .container-despesa {
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
-    .container-categorias{
+
+    .container-categorias {
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
-    #filtrar-cat{
+
+    #filtrar-cat {
         color: var(--text-color-dark);
     }
-    .container-editar{
+
+    .container-editar {
         background-color: var(--background-container-dark);
         color: var(--text-color-dark);
     }
-    .container-editar input{
+
+    .container-editar input {
         color: var(--text-color-dark);
     }
-    
+
     .status-sub-01 {
         box-shadow: 10px 20px 50px 5px #70ef797b;
     }

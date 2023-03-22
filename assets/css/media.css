@@ -4,10 +4,11 @@
     .container, body, .container-despesa, .container-categorias{
         font-size: calc(.5rem + 1vh);
     }
+    
+    /* || Tela Home */
     .container{
         height: calc(100% + 60vh);
     }
-    /* || Tela Home */
     .tittle{
         font-size: calc(1rem + 1vw);
     }

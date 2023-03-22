@@ -8,8 +8,8 @@
 }
 
 html {
-    font-size: 62.5%;
     /* Define 1rem como 10px */
+    font-size: 62.5%;
 }
 
 body {
@@ -25,7 +25,6 @@ ol {
 
 a {
     color: inherit;
-    text-decoration: none;
 }
 
 button,

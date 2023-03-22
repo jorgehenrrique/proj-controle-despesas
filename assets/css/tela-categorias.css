@@ -1,4 +1,4 @@
-.container-categorias{
+.container-categorias {
     width: 100%;
     height: 100%;
     padding-top: 12rem;
@@ -9,23 +9,27 @@
     gap: 4rem;
 }
 
-
-.tabela-categorias{
+.tabela-categorias {
     width: 90%;
     align-self: center;
     height: fit-content;
     overflow: auto;
 }
-.btn-adicionar-categoria{
+
+.btn-adicionar-categoria {
     flex-grow: 1;
     margin-left: 6rem;
 }
 
-.tabela-categorias th:last-child, .tabela-categorias td:last-child{
+.tabela-categorias th:last-child,
+.tabela-categorias td:last-child {
     text-align: center;
 }
 
-.confir-excluir, .excluir-confirmado, .excluir-negado{
+/* || Mensagens */
+.confir-excluir,
+.excluir-confirmado,
+.excluir-negado {
     width: 90%;
     background-image: linear-gradient(80deg, #70ef797b, #ea4c66);
     font-weight: bold;
@@ -37,12 +41,12 @@
     align-items: center;
     gap: 1rem;
 }
-.excluir-confirmado{
+.excluir-confirmado {
     background-image: linear-gradient(80deg, #70ef79ae, #70ef797a);
     color: inherit;
     justify-content: center;
 }
-.excluir-negado{
+.excluir-negado {
     background-image: linear-gradient(80deg, #ef7085, #ea4c667a);
     justify-content: center;
 }

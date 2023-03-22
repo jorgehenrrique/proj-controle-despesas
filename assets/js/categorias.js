@@ -145,7 +145,7 @@ function editarCategoria(id) {
                 atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova);
                 setTimeout(function () {
                     chamaCategorias();
-                }, 1500);
+                }, 1300);
             }
         }
     });
