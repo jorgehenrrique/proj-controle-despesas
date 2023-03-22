@@ -102,7 +102,7 @@ function cards() {
     cardAtrasadas.innerHTML = `${atrasadas}`
 }
 
-// || Vormata valor
+// || Formata valor
 function formataValor(valor) {
     let valorN = Number(valor);
     valorN = valorN.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
