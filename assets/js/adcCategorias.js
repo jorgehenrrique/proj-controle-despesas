@@ -1,7 +1,6 @@
 let criarCategorias = [];
 
 // inputCriarCategoria
-// Verifica se a categoria já existe, caso nao, cria uma
 function cadastrarCategoria() { //-->>
     let inputCategoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
 
@@ -30,9 +29,7 @@ function verificaCategoria(inputCategoria) {
     let checador = 0;
 
     criarCategorias.forEach((categoria) => {
-        if (inputCategoria === categoria.categoria) {
-            checador++
-        }
+        if (inputCategoria === categoria.categoria) checador++;
     });
     if (checador === 0) return false;
     return true;

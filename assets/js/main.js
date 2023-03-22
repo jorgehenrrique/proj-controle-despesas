@@ -79,6 +79,7 @@ function chamaAdcEditar() {
     limpaCategorias();
     telaEditar.classList.remove('none');
     btnSalvarEdit.setAttribute('onclick', `cadastrarCategoria()`); // -->>
+    telaEditar.querySelector('form h1').innerText = 'ADICIONAR CATEGORIAS';
 }
 function limpaEditar() {
     telaEditar.classList.add('none');

@@ -128,8 +128,8 @@ function chamaEditar(id, nomeCategoria) {
     chamaAdcEditar();
     inputCriarCategoria.value = nomeCategoria;
     btnSalvarEdit.setAttribute('onclick', `editarCategoria(${id})`);
+    telaEditar.querySelector('form h1').innerText = 'EDITAR CATEGORIAS';
 }
-
 
 function editarCategoria(id) {
     criarCategorias.map((categoria) => {
@@ -149,6 +149,7 @@ function editarCategoria(id) {
             }
         }
     });
+    telaEditar
     salvarCategoriasLocal();
     listarTabelaCategorias(criarCategorias);
     limpaForm();
@@ -157,9 +158,7 @@ function editarCategoria(id) {
 // || Atualiza categoria editada nas despesas
 function atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova) {
     criaDespesas.filter((despesa) => {
-        if (despesa.categoria == categoriaAntiga) {
-            despesa.categoria = categoriaNova;
-        }
+        if (despesa.categoria == categoriaAntiga) despesa.categoria = categoriaNova;
     });
     listarTabelaDespesas(criaDespesas);
     salvarDespesasLocal();
