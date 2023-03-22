@@ -12,12 +12,11 @@ function listarTabelaDespesas(array) {
 }
 
 function listarDespesas(despesa) {
-    let valor = formataValor(despesa.valor);
 
     tabelaDespesas.innerHTML += `<tr class="${despesa.status ? 'pago-linha' : 'pendente-linha'}">
     <td>${despesa.data}</td>
     <td>${despesa.despesa}</td>
-    <td>${valor}</td>
+    <td>${formataValor(despesa.valor)}</td>
     <td>${despesa.categoria}</td>
     <td>
     <button class="${despesa.status ? 'pago' : 'pendente'}" onclick="alterarStatus(${despesa.id})">${despesa.status ? 'PAGO' : 'PENDENTE'}</button>
