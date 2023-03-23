@@ -83,6 +83,7 @@ function onclickSExcluir(id) {
                     excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
                     excluirConfirmado.classList.remove('none');
                     existe = false;
+                    setTimeout(limpaMensagemDeletar, 3000); // Limpar mensagem acima
                 }
             });
             if (existe) {
@@ -92,6 +93,7 @@ function onclickSExcluir(id) {
                 excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
                 excluirConfirmado.classList.remove('none'); // Mensagem de excluído
                 existe = false;
+                setTimeout(limpaMensagemDeletar, 3000); // Limpar mensagem acima
             }
         }
     });
@@ -108,9 +110,6 @@ function limpaMensagemDeletar() {
     excluirConfirmado.classList.add('none');
     document.querySelector('.excluir-confirmado-home').classList.add('none'); // Mensagem do home
 }
-setInterval(function () { // Limpar mensagem acima
-    limpaMensagemDeletar();
-}, 5000);
 
 
 (() => { // Restaura lista local em JSON e converte para JS
@@ -154,6 +153,7 @@ function editarCategoria(id) {
     listarTabelaCategorias(criarCategorias);
     limpaForm();
 }
+
 
 // || Atualiza categoria editada nas despesas
 function atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova) {
