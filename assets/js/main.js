@@ -116,11 +116,13 @@ function exibirMensagens(status, mensagem) {
         document.querySelector('.mensagem-adc-categoria').classList.remove('none');
         document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+        setTimeout(limparMensagens, 4000); // Limpar mensagem acima
     } else {
         document.querySelector('.mensagem-adc-categoria').classList.add('mensagem-alerta');
         document.querySelector('.mensagem-adc-categoria').classList.remove('none');
         document.querySelector('.mensagem-adc-despesa').classList.add('mensagem-alerta');
         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
+        setTimeout(limparMensagens, 4000); // Limpar mensagem acima
     }
 }
 function limparMensagens() {
@@ -129,9 +131,9 @@ function limparMensagens() {
     document.querySelector('.mensagem-adc-despesa').classList.add('none');
     document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
 }
-setInterval(function () {
-    limparMensagens();
-}, 10000);
+// setInterval(function () { // Atualizado para setTimeout
+//     limparMensagens();
+// }, 10000);
 
 
 function alteraBtnVoltar(salvo) { // Altera o btn de cacelar para voltar
