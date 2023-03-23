@@ -21,6 +21,7 @@ function cadastrarCategoria() { //-->>
         }
     } else {
         exibirMensagens(false, 'Informe um valor válido!');
+        setTimeout(limparMensagens, 3000);
     }
     limpaForm();
     inputCriarCategoria.focus();
