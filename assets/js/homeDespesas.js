@@ -33,7 +33,7 @@ function confirmaExcluirDespesa(id) { // Confirmar excluir em Despesas
             if (despesa.id == id) {
                 criaDespesas.splice(indice, 1);
                 document.querySelector('.excluir-confirmado-home').classList.remove('none');
-                setTimeout(limpaMensagemDeletar, 3000); // Limpar mensagem acima
+                setTimeout(limpaMensagemDeletar, 2000); // Limpar mensagem acima
             }
         });
         document.querySelector('.confir-excluir-home').classList.add('none');

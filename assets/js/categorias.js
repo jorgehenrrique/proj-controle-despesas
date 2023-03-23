@@ -83,7 +83,7 @@ function onclickSExcluir(id) {
                     excluirConfirmado.innerText = 'Não é possível excluir categoria em uso!';
                     excluirConfirmado.classList.remove('none');
                     existe = false;
-                    setTimeout(limpaMensagemDeletar, 3000); // Limpar mensagem acima
+                    setTimeout(limpaMensagemDeletar, 2000); // Limpar mensagem acima
                 }
             });
             if (existe) {
@@ -93,7 +93,7 @@ function onclickSExcluir(id) {
                 excluirConfirmado.innerText = 'Categoria deletada com sucesso!';
                 excluirConfirmado.classList.remove('none'); // Mensagem de excluído
                 existe = false;
-                setTimeout(limpaMensagemDeletar, 3000); // Limpar mensagem acima
+                setTimeout(limpaMensagemDeletar, 2000); // Limpar mensagem acima
             }
         }
     });
