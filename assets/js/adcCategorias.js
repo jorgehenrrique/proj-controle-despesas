@@ -8,12 +8,15 @@ function cadastrarCategoria() { //-->>
         if (criarCategorias.length <= 0) {
             salvaCategoria(inputCategoria, geraID());
             exibirMensagens(true, 'Categoria adicionada com sucesso!');
+            setTimeout(limparMensagens, 3000);
         } else {
             if (verificaCategoria(inputCategoria)) {
                 exibirMensagens(false, 'Categoria já existe!');
+                setTimeout(limparMensagens, 3000);
             } else {
                 salvaCategoria(inputCategoria, geraID());
                 exibirMensagens(true, 'Categoria adicionada com sucesso!');
+                setTimeout(limparMensagens, 3000);
             }
         }
     } else {

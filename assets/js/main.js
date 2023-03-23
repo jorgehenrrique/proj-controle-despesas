@@ -116,13 +116,13 @@ function exibirMensagens(status, mensagem) {
         document.querySelector('.mensagem-adc-categoria').classList.remove('none');
         document.querySelector('.mensagem-adc-despesa').classList.remove('mensagem-alerta');
         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
-        setTimeout(limparMensagens, 3500); // Limpar mensagem acima
+        // setTimeout(limparMensagens, 3500); // Movido para local de chamada da mensagem, para limpar com tempo indemendente
     } else {
         document.querySelector('.mensagem-adc-categoria').classList.add('mensagem-alerta');
         document.querySelector('.mensagem-adc-categoria').classList.remove('none');
         document.querySelector('.mensagem-adc-despesa').classList.add('mensagem-alerta');
         document.querySelector('.mensagem-adc-despesa').classList.remove('none');
-        setTimeout(limparMensagens, 3500); // Limpar mensagem acima
+        // setTimeout(limparMensagens, 3500); // Movido para local de chamada da mensagem, para limpar com tempo indemendente
     }
 }
 function limparMensagens() {

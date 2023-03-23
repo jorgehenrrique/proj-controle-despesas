@@ -22,11 +22,13 @@ function checaEntradas(Categoria, Vencimento, Despesa, Valor) {
         if (Despesa === '') exibirMensagens(false, 'Dê um nome a sua despesa.');
         if (Vencimento === '') exibirMensagens(false, 'Selecione uma data de vencimento.');
         if (Categoria === '') exibirMensagens(false, `Selecione uma categoria ou crie: <button onclick="chamaCategorias()">Categorias</button>`);
+        setTimeout(limparMensagens, 3000);
     } else {
         let dataFormatada = formataData(Vencimento);
         let status = false;
         adicionaDespesa(Categoria, dataFormatada, Despesa, Valor, status);
         exibirMensagens(true, 'Despesa adicionada com sucesso!');
+        setTimeout(limparMensagens, 3000);
         limpaForm();
         alteraBtnVoltar(true);
     }
@@ -83,5 +85,6 @@ function salvarDespesasLocal() { // Salva lista despesas local em JSON
 function checaCategoriaExistente() {
     if (criarCategorias.length <= 0) {
         exibirMensagens(false, `Primeiro é preciso criar uma categoria: <button onclick="chamaCategorias()">Categorias</button>`);
+        setTimeout(limparMensagens, 6000); // Limpar mensagem acima
     };
 }

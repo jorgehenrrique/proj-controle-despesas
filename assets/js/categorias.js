@@ -135,11 +135,13 @@ function editarCategoria(id) {
         if (categoria.id == id) {
             if (inputCriarCategoria.value.trim() == '' || verificaCategoria(inputCriarCategoria.value)) {
                 exibirMensagens(false, 'Adicione um nome válido!');
+                setTimeout(limparMensagens, 3000);
             } else {
                 let categoriaAntiga = categoria.categoria;
                 categoria.categoria = inputCriarCategoria.value.trim().toUpperCase().replace(' ', '-');
                 let categoriaNova = categoria.categoria;
                 exibirMensagens(true, 'Categoria editada com sucesso!');
+                setTimeout(limparMensagens, 3000);
 
                 atualizaCategoriaDasDespesas(categoriaAntiga, categoriaNova);
                 setTimeout(function () {
