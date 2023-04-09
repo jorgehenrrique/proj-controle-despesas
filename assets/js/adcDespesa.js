@@ -76,8 +76,10 @@ function salvarDespesasLocal() { // Salva lista despesas local em JSON
     // Chama arquivo local e converte para array JS
     const despesasRestauradas = JSON.parse(localStorage.getItem('despesas'));
 
-    for (let des of despesasRestauradas) {
-        adicionaDespesa(des.categoria, des.data, des.despesa, des.valor, des.status);
+    if (despesasRestauradas !== null) { // Evitar erro ao tentar carregar json nulo
+        for (let des of despesasRestauradas) {
+            adicionaDespesa(des.categoria, des.data, des.despesa, des.valor, des.status);
+        }
     }
 })()
 

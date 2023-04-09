@@ -74,23 +74,31 @@ section{
 .status-sub-01{
     border-bottom: 4px solid #70ef79;
     box-shadow: 30px 30px 50px 10px #70ef797b inset;
+    padding-top: 1rem;
 }
 .status-sub-01 p{
     color: #008000;
+    padding-top: 2rem;
 }
+
 .status-sub-02{
     border-bottom: 4px solid #ef7085;
     box-shadow: 30px 30px 50px 10px #ef70857b inset;
+    padding-top: 1rem;
 }
 .status-sub-02 p{
     color: #ff0000;
+    padding-top: 2rem;
 }
+
 .status-sub-03{
     border-bottom: 4px solid #e49036;
     box-shadow: 30px 30px 50px 10px #e490367b inset;
+    padding-top: 1rem;
 }
 .status-sub-03 p{
     color: #ffa500;
+    padding-top: 2rem;
 }
 
 

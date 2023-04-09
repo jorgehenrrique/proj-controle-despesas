@@ -114,7 +114,7 @@ function limpaMensagemDeletar() {
 
 (() => { // Restaura lista local em JSON e converte para JS
     // Chama arquivo local e converte para array JS || Otimizado
-    const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias'));
+    const categoriasRestauradas = JSON.parse(localStorage.getItem('categorias') ?? '[]'); // O operador ?? é usado para fornecer um valor padrão de [] (um array vazio) caso localStorage.getItem('categorias') retorne null. // ?? '[]'
 
     for (let cat of categoriasRestauradas) {
         salvaCategoria(cat.categoria, cat.id);
