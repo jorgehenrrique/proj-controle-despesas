@@ -31,11 +31,17 @@
     .btn-adicionar-categoria{
         margin-left: 0rem;
     }
+    .container-categorias{
+        height: calc(100% + 20vh);
+    }
 
     /* || Tela adc Despesas */
     form{
         width: 100%;
         padding: 2rem 4rem;
+    }
+    .container-despesa{
+    height: calc(100% + 18rem);
     }
 }
 @media screen and (max-width:  490px){ 
