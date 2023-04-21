@@ -170,3 +170,20 @@ tr:nth-child(2n){
 .none{
     display: none;
 }
+
+/* || Footer */
+.footer{
+    position: fixed;
+    bottom: .5%;
+    opacity: 40%;
+    font-size: .5rem;
+    text-align: center;
+    transition: ease-out .3s;
+    width: 100%;
+}
+.by{
+    color: #000;
+}
+.footer:hover{
+    opacity: 90%;
+}

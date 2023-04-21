@@ -62,4 +62,9 @@
     .status-sub-03 {
         box-shadow: 10px 20px 50px 5px #e490367b;
     }
+
+    /* || Footer */
+    .by{
+        color: #fff;
+    }
 }
